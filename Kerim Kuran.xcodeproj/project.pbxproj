@@ -13,6 +13,11 @@
 		F56CC86D2987C87A003FAC1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56CC86B2987C87A003FAC1B /* Main.storyboard */; };
 		F56CC86F2987C87C003FAC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56CC86E2987C87C003FAC1B /* Assets.xcassets */; };
 		F56CC8722987C87C003FAC1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56CC8702987C87C003FAC1B /* LaunchScreen.storyboard */; };
+		F56CC8802987CD98003FAC1B /* VerseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CC87E2987CD98003FAC1B /* VerseViewController.swift */; };
+		F5B741582987DD5900676827 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B741572987DD5900676827 /* Constants.swift */; };
+		F5B7415A2987DE1500676827 /* LabelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B741592987DE1500676827 /* LabelTest.swift */; };
+		F5B7415C2987E46700676827 /* DataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7415B2987E46700676827 /* DataFile.swift */; };
+		F5B74160298809E800676827 /* VerseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7415F298809E800676827 /* VerseCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		F56CC86E2987C87C003FAC1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F56CC8712987C87C003FAC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F56CC8732987C87C003FAC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F56CC87E2987CD98003FAC1B /* VerseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewController.swift; sourceTree = "<group>"; };
+		F5B741572987DD5900676827 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F5B741592987DE1500676827 /* LabelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTest.swift; sourceTree = "<group>"; };
+		F5B7415B2987E46700676827 /* DataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFile.swift; sourceTree = "<group>"; };
+		F5B7415F298809E800676827 /* VerseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,34 @@
 			children = (
 				F56CC8652987C87A003FAC1B /* AppDelegate.swift */,
 				F56CC8672987C87A003FAC1B /* SceneDelegate.swift */,
-				F56CC8692987C87A003FAC1B /* ViewController.swift */,
-				F56CC86B2987C87A003FAC1B /* Main.storyboard */,
+				F56CC87C2987CC45003FAC1B /* Controllers */,
+				F56CC87D2987CC59003FAC1B /* Views */,
 				F56CC86E2987C87C003FAC1B /* Assets.xcassets */,
 				F56CC8702987C87C003FAC1B /* LaunchScreen.storyboard */,
+				F5B741572987DD5900676827 /* Constants.swift */,
 				F56CC8732987C87C003FAC1B /* Info.plist */,
 			);
 			path = "Kerim Kuran";
+			sourceTree = "<group>";
+		};
+		F56CC87C2987CC45003FAC1B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F56CC8692987C87A003FAC1B /* ViewController.swift */,
+				F56CC87E2987CD98003FAC1B /* VerseViewController.swift */,
+				F5B7415F298809E800676827 /* VerseCell.swift */,
+				F5B741592987DE1500676827 /* LabelTest.swift */,
+				F5B7415B2987E46700676827 /* DataFile.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F56CC87D2987CC59003FAC1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F56CC86B2987C87A003FAC1B /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +169,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F56CC8802987CD98003FAC1B /* VerseViewController.swift in Sources */,
+				F5B7415A2987DE1500676827 /* LabelTest.swift in Sources */,
+				F5B7415C2987E46700676827 /* DataFile.swift in Sources */,
 				F56CC86A2987C87A003FAC1B /* ViewController.swift in Sources */,
 				F56CC8662987C87A003FAC1B /* AppDelegate.swift in Sources */,
 				F56CC8682987C87A003FAC1B /* SceneDelegate.swift in Sources */,
+				F5B741582987DD5900676827 /* Constants.swift in Sources */,
+				F5B74160298809E800676827 /* VerseCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rnj-gZ-724">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Kerim_Kuran" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJ7-hM-CcG">
+                                <rect key="frame" x="144" y="286" width="104" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-364.12213740458014" y="-161.26760563380282"/>
+        </scene>
+        <!--VerseView Controller-->
+        <scene sceneID="yba-Hl-fG9">
+            <objects>
+                <viewController id="Rnj-gZ-724" userLabel="VerseView Controller" customClass="VerseViewController" customModule="Kerim_Kuran" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nyt-cH-Cze">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2dZ-9P-MfA">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="verseViewBackground"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ls8-uN-stz">
+                                <rect key="frame" x="0.0" y="193" width="393" height="659"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReusableCell" rowHeight="191" id="Jky-rG-Rd8" customClass="VerseCell" customModule="Kerim_Kuran" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="191"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jky-rG-Rd8" id="iXX-pf-kMJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="191"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2e6-7v-JD9">
+                                                    <rect key="frame" x="20" y="42" width="353" height="107"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tr-kQ-Wig">
+                                                            <rect key="frame" x="0.0" y="8" width="345" height="25"/>
+                                                            <color key="backgroundColor" name="verseHeaderBackground"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="R9v-lG-B42"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBv-nt-WWW">
+                                                            <rect key="frame" x="0.0" y="41" width="345" height="58"/>
+                                                            <color key="backgroundColor" name="verseBackground"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="verseBackground"/>
+                                                    <constraints>
+                                                        <constraint firstItem="qBv-nt-WWW" firstAttribute="leading" secondItem="2e6-7v-JD9" secondAttribute="leading" id="QIs-ng-uWV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="qBv-nt-WWW" secondAttribute="trailing" constant="8" id="U8v-4G-OvO"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2tr-kQ-Wig" secondAttribute="trailing" constant="8" id="WdU-sq-xqJ"/>
+                                                        <constraint firstItem="qBv-nt-WWW" firstAttribute="top" secondItem="2tr-kQ-Wig" secondAttribute="bottom" constant="8" id="Yuc-hr-6ZA"/>
+                                                        <constraint firstItem="2tr-kQ-Wig" firstAttribute="leading" secondItem="2e6-7v-JD9" secondAttribute="leading" id="jgv-LQ-zSt"/>
+                                                        <constraint firstAttribute="bottom" secondItem="qBv-nt-WWW" secondAttribute="bottom" constant="8" id="pmp-68-tWd"/>
+                                                        <constraint firstItem="2tr-kQ-Wig" firstAttribute="top" secondItem="2e6-7v-JD9" secondAttribute="top" constant="8" id="qT0-aX-RQr"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2e6-7v-JD9" firstAttribute="leading" secondItem="iXX-pf-kMJ" secondAttribute="leadingMargin" id="2AR-5t-2Nf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2e6-7v-JD9" secondAttribute="trailing" id="N4G-D7-Hfc"/>
+                                                <constraint firstItem="2e6-7v-JD9" firstAttribute="top" secondItem="iXX-pf-kMJ" secondAttribute="topMargin" constant="31" id="UUS-dN-QIr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2e6-7v-JD9" secondAttribute="bottom" constant="31" id="fOL-bY-EPm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="verseHeaderLabel" destination="2tr-kQ-Wig" id="Fja-mY-1sV"/>
+                                            <outlet property="verseLabel" destination="qBv-nt-WWW" id="2VI-JO-mKJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bv4-tK-peM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ls8-uN-stz" secondAttribute="bottom" id="EG3-r0-CQJ"/>
+                            <constraint firstItem="ls8-uN-stz" firstAttribute="trailing" secondItem="bv4-tK-peM" secondAttribute="trailing" id="I18-cL-wvh"/>
+                            <constraint firstItem="ls8-uN-stz" firstAttribute="top" secondItem="bv4-tK-peM" secondAttribute="top" constant="134" id="Zw0-8T-3Kz"/>
+                            <constraint firstItem="ls8-uN-stz" firstAttribute="leading" secondItem="bv4-tK-peM" secondAttribute="leading" id="eTt-jx-hYr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="cUy-0o-e7x" id="Fma-co-ryk"/>
+                        <outlet property="tableView" destination="ls8-uN-stz" id="B5z-bs-dUz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZwS-uY-32z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="cUy-0o-e7x">
+                    <connections>
+                        <outlet property="delegate" destination="Rnj-gZ-724" id="3r1-0U-tYG"/>
+                        <outlet property="searchContentsController" destination="Rnj-gZ-724" id="0Nk-JG-VAs"/>
+                        <outlet property="searchResultsDataSource" destination="Rnj-gZ-724" id="fn5-NF-Gkn"/>
+                        <outlet property="searchResultsDelegate" destination="Rnj-gZ-724" id="UYp-Tw-mgA"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="464.8854961832061" y="-161.26760563380282"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="verseBackground">
+            <color red="0.23921568627450981" green="0.44313725490196076" blue="0.44705882352941179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="verseHeaderBackground">
+            <color red="0.17647058823529413" green="0.37254901960784315" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="verseViewBackground">
+            <color red="0.60392156862745094" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
