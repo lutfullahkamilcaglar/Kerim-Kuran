@@ -9,6 +9,8 @@ import UIKit
 
 class VerseCell: UITableViewCell {
 
+    @IBOutlet weak var verseView: UIView!
+    
     @IBOutlet weak var verseHeaderLabel: UILabel!
     
     @IBOutlet weak var verseLabel: UILabel!
