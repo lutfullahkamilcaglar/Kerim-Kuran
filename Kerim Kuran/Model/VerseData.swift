@@ -12,4 +12,7 @@ struct VerseData: Codable {
     var id: String
     var sureId: Int
     var ayetValue: String
+    
 }
+
+

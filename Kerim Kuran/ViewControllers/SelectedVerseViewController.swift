@@ -6,96 +6,107 @@
 //
 
 import UIKit
+import Fuse
 
-class SelectedVerseViewController: UIViewController, UISearchBarDelegate{
+class SelectedVerseViewController: UIViewController {
+    
+    // MARK: - Properties
     
     @IBOutlet weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
+    
     var data = DataLoader().verseData
-    var searching = false
-    var filteredData = DataLoader().verseData
+    var filteredData = [VerseData]()
+    var NSfilteredData = [NSAttributedString]()
+    let fuse = Fuse()
+    
+    // MARK: - View Setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup the Search Controller
         navigationItem.searchController = searchController
-        searchController.searchResultsUpdater = self
-        tableView.delegate = self
-        tableView.dataSource = self
         searchController.loadViewIfNeeded()
-        searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
-        tableView.reloadData()
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.placeholder = "Arama"
+        
+        // Setup the TableView
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
+        
     }
     
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        if let indexPath = tableView.indexPathForSelectedRow {
-            UserDefaults.standard.set(indexPath.row, forKey: "lastViewedRow")
-            UserDefaults.standard.set(indexPath.section, forKey: "lastViewedSection")
-            tableView.reloadData()
-        }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        let row = UserDefaults.standard.integer(forKey: "lastViewedRow")
-        let section = UserDefaults.standard.integer(forKey: "lastViewedSection")
-        let indexPath = IndexPath(row: row, section: section)
-        tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+    
+    // MARK: - Search Text Arrangement
+    
+    func filterContentForSearchText(_ searchText: String) {
+        let boldAttrs = [
+            NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17),
+            NSAttributedString.Key.foregroundColor: UIColor.darkText
+        ]
+        let ayetValue = data.map { $0.ayetValue }
+        let results = fuse.search(searchText, in: ayetValue)
+        
+        NSfilteredData = results.map { (index, _, matchedRanges) in
+            let verse = data[index].ayetValue
+            
+            let attributedString = NSMutableAttributedString(string: verse)
+            matchedRanges
+                .map(Range.init)
+                .map(NSRange.init)
+                .forEach {
+                    attributedString.addAttributes(boldAttrs, range: $0)
+                }
+            return attributedString
+        }
         tableView.reloadData()
     }
-
+    
 }
-// MARK: - UITableView And SearchTextField Configuration
-    
-extension SelectedVerseViewController: UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
-    
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searching{
-            return filteredData.count
-        }else{
-            return data.count
-        }
+// MARK: - UISearchBar Delegate
+extension SelectedVerseViewController: UISearchBarDelegate {
+func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+    filterContentForSearchText(searchBar.text!)
     }
+}
 
+// MARK: - UISearchResultsUpdating Delegate
+extension SelectedVerseViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+}
+
+
+// MARK: - UITableView
+    
+extension SelectedVerseViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return NSfilteredData.count
+        }
+        return data.count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! SelectedVerseCell
-        if searching {
-            let verseLabel = filteredData[indexPath.row]
-            cell.SVerseLabel.text = verseLabel.id + " " + verseLabel.ayetValue
+        let item: NSAttributedString
+        
+        if searchController.isActive && searchController.searchBar.text != ""  {
+            item = NSfilteredData[indexPath.row]
         }else{
             let verseLabel = data[indexPath.row]
-            cell.SVerseLabel.text = verseLabel.id + " " + verseLabel.ayetValue
+            item = NSAttributedString(string: verseLabel.id + " " + verseLabel.ayetValue )
         }
+        cell.SVerseLabel.attributedText =  item
         return cell
     }
-
-    func searhBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searching = false
-        filteredData.removeAll()
-        tableView.reloadData()
-    }
-
-    func updateSearchResults(for searchController: UISearchController) {
-        let text = searchController.searchBar.text!
-        if !text.isEmpty {
-            searching = true
-            filteredData.removeAll()
-            let components = text.components(separatedBy: CharacterSet.alphanumerics.inverted)
-            let strippedText = components.joined(separator: "").lowercased(with: Locale(identifier: "tr_TR"))
-            for verse in data {
-                if verse.ayetValue.lowercased(with: Locale(identifier: "tr_TR")).contains(strippedText) {
-                    filteredData.append(verse)
-                }
-            }
-        } else {
-            searching = false
-            filteredData.removeAll()
-            filteredData = data
-        }
-        self.tableView.reloadData()
-    }
-
 }
-
-

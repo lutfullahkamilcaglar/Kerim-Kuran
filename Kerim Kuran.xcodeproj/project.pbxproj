@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A89FE2E28588CADFF36C1E2 /* Pods_Kerim_Kuran.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38E917D9C56FA9EEEECA114 /* Pods_Kerim_Kuran.framework */; };
 		F50D63D5298930BC00A86658 /* p1.json in Resources */ = {isa = PBXBuildFile; fileRef = F50D63D4298930BC00A86658 /* p1.json */; };
 		F50D63D7298933D700A86658 /* SelectedVerseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50D63D6298933D700A86658 /* SelectedVerseViewController.swift */; };
 		F50D63D9298933F900A86658 /* SelectedVerseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50D63D8298933F900A86658 /* SelectedVerseCell.swift */; };
@@ -26,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22505A198149001A8723471A /* Pods-Kerim Kuran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kerim Kuran.release.xcconfig"; path = "Target Support Files/Pods-Kerim Kuran/Pods-Kerim Kuran.release.xcconfig"; sourceTree = "<group>"; };
+		A8C27D75FEDCB5DE6E424F5A /* Pods-Kerim Kuran.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kerim Kuran.debug.xcconfig"; path = "Target Support Files/Pods-Kerim Kuran/Pods-Kerim Kuran.debug.xcconfig"; sourceTree = "<group>"; };
+		C38E917D9C56FA9EEEECA114 /* Pods_Kerim_Kuran.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kerim_Kuran.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50D63D4298930BC00A86658 /* p1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = p1.json; sourceTree = "<group>"; };
 		F50D63D6298933D700A86658 /* SelectedVerseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedVerseViewController.swift; sourceTree = "<group>"; };
 		F50D63D8298933F900A86658 /* SelectedVerseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedVerseCell.swift; sourceTree = "<group>"; };
@@ -51,12 +55,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A89FE2E28588CADFF36C1E2 /* Pods_Kerim_Kuran.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11886CFC233975120876178E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C38E917D9C56FA9EEEECA114 /* Pods_Kerim_Kuran.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B449F646FC30B7FDA2D8CF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8C27D75FEDCB5DE6E424F5A /* Pods-Kerim Kuran.debug.xcconfig */,
+				22505A198149001A8723471A /* Pods-Kerim Kuran.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F50D63D3298843D700A86658 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +114,8 @@
 			children = (
 				F56CC8642987C87A003FAC1B /* Kerim Kuran */,
 				F56CC8632987C87A003FAC1B /* Products */,
+				4B449F646FC30B7FDA2D8CF0 /* Pods */,
+				11886CFC233975120876178E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F56CC8762987C87C003FAC1B /* Build configuration list for PBXNativeTarget "Kerim Kuran" */;
 			buildPhases = (
+				6BF214FCFD86E67ECE67282F /* [CP] Check Pods Manifest.lock */,
 				F56CC85E2987C87A003FAC1B /* Sources */,
 				F56CC85F2987C87A003FAC1B /* Frameworks */,
 				F56CC8602987C87A003FAC1B /* Resources */,
+				0B03B4DFFB4ED14B2A2525B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,6 +230,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B03B4DFFB4ED14B2A2525B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kerim Kuran/Pods-Kerim Kuran-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kerim Kuran/Pods-Kerim Kuran-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kerim Kuran/Pods-Kerim Kuran-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BF214FCFD86E67ECE67282F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kerim Kuran-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F56CC85E2987C87A003FAC1B /* Sources */ = {
@@ -362,6 +431,7 @@
 		};
 		F56CC8772987C87C003FAC1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8C27D75FEDCB5DE6E424F5A /* Pods-Kerim Kuran.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -391,6 +461,7 @@
 		};
 		F56CC8782987C87C003FAC1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22505A198149001A8723471A /* Pods-Kerim Kuran.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
