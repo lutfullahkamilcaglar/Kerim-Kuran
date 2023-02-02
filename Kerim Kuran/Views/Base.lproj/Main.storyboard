@@ -120,7 +120,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-02-29a">
-                                <rect key="frame" x="0.0" y="148" width="393" height="704"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" name="verseViewBackground"/>
                                 <color key="separatorColor" name="verseViewBackground"/>
                                 <prototypes>
@@ -173,13 +173,13 @@
                         <color key="backgroundColor" name="verseViewBackground"/>
                         <constraints>
                             <constraint firstItem="6wn-02-29a" firstAttribute="leading" secondItem="7bD-Ss-o9U" secondAttribute="leading" id="1AM-Ka-rW7"/>
-                            <constraint firstItem="6wn-02-29a" firstAttribute="top" secondItem="7bD-Ss-o9U" secondAttribute="top" constant="45" id="97p-AX-KAH"/>
+                            <constraint firstItem="6wn-02-29a" firstAttribute="top" secondItem="7bD-Ss-o9U" secondAttribute="top" id="97p-AX-KAH"/>
                             <constraint firstAttribute="bottom" secondItem="6wn-02-29a" secondAttribute="bottom" id="fAc-DF-lPw"/>
                             <constraint firstItem="6wn-02-29a" firstAttribute="trailing" secondItem="7bD-Ss-o9U" secondAttribute="trailing" id="r0i-Tn-cw1"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" style="browser" id="QUA-PO-lA1"/>
+                    <navigationItem key="navigationItem" id="QUA-PO-lA1"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="6wn-02-29a" id="HFP-6d-0wM"/>
@@ -197,6 +197,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Sz-zA-KnW">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="verseHeaderBackground"/>
+                        <color key="barTintColor" name="verseViewBackground"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

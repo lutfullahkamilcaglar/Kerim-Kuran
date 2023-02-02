@@ -11,12 +11,10 @@ class SelectedVerseViewController: UIViewController, UISearchBarDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
-    
     var data = DataLoader().verseData
     var searching = false
     var filteredData = DataLoader().verseData
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.searchController = searchController
@@ -50,6 +48,7 @@ class SelectedVerseViewController: UIViewController, UISearchBarDelegate{
 // MARK: - UITableView And SearchTextField Configuration
     
 extension SelectedVerseViewController: UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching{
