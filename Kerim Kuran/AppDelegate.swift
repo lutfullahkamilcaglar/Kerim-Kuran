@@ -11,7 +11,23 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var SVController = SelectedVerseViewController()
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        let indexPath = SVController.tableView.indexPathForSelectedRow
+        UserDefaults.standard.set(indexPath, forKey: "lastViewedRow")
+        SVController.tableView.reloadData()
+        SVController.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+    }
 
+    
+func applicationWillEnterForeground(_ application: UIApplication) {
+    let indexPath = UserDefaults.standard.object(forKey: "lastViewedRow") as? IndexPath
+    SVController.tableView.reloadData()
+    if let indexPath = indexPath {
+        SVController.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+    }
+}
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

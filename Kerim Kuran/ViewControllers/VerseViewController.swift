@@ -18,9 +18,7 @@ class VerseViewController: UIViewController, UITableViewDelegate {
         tableView.separatorStyle = .none
         
     }
-    
 }
-
     // MARK: - UITableView
     
 extension VerseViewController: UITableViewDataSource {
@@ -43,8 +41,6 @@ extension VerseViewController: UITableViewDataSource {
         cell.verseView.translatesAutoresizingMaskIntoConstraints = false
         cell.verseView.widthAnchor.constraint(equalToConstant: 329).isActive = true
         cell.verseView.heightAnchor.constraint(equalToConstant: 136).isActive = true
-       // cell.verseView.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 32).isActive = true
-        //cell.verseView.topAnchor.constraint(equalTo: parent.topAnchor, constant: 134).isActive = true
 
         return cell
     }

@@ -11,7 +11,6 @@ public class DataLoader {
     @Published var verseData = [VerseData]()
     init() {
         load()
-        //sort()
     }
     func load() {
         if let fileLocation = Bundle.main.url(forResource: "p1", withExtension: "json"){
@@ -25,10 +24,4 @@ public class DataLoader {
             }
         }
     }
-    
-//    func sort() {
-//        self.verseData = self.verseData.sorted(by: {$0.id < $1.id})
-//    }
-//    
-    
 }

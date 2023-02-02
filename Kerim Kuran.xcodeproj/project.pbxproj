@@ -64,9 +64,26 @@
 				F50D63DA2989435400A86658 /* VerseData.swift */,
 				F50D63DC29894C9400A86658 /* DataLoader.swift */,
 				F5B741592987DE1500676827 /* LabelTest.swift */,
-				F50D63D4298930BC00A86658 /* p1.json */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F5536137298B5617000F36CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F50D63D4298930BC00A86658 /* p1.json */,
+				F5B741572987DD5900676827 /* Constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F5536138298B568F000F36CF /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				F50D63D8298933F900A86658 /* SelectedVerseCell.swift */,
+				F5B7415F298809E800676827 /* VerseCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		F56CC8592987C87A003FAC1B = {
@@ -90,26 +107,25 @@
 			children = (
 				F56CC8652987C87A003FAC1B /* AppDelegate.swift */,
 				F56CC8672987C87A003FAC1B /* SceneDelegate.swift */,
+				F5536138298B568F000F36CF /* TableViewCells */,
 				F50D63D3298843D700A86658 /* Model */,
 				F56CC87D2987CC59003FAC1B /* Views */,
-				F56CC87C2987CC45003FAC1B /* Controllers */,
+				F56CC87C2987CC45003FAC1B /* ViewControllers */,
+				F5536137298B5617000F36CF /* Resources */,
 				F56CC86E2987C87C003FAC1B /* Assets.xcassets */,
-				F5B741572987DD5900676827 /* Constants.swift */,
 				F56CC8732987C87C003FAC1B /* Info.plist */,
 			);
 			path = "Kerim Kuran";
 			sourceTree = "<group>";
 		};
-		F56CC87C2987CC45003FAC1B /* Controllers */ = {
+		F56CC87C2987CC45003FAC1B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				F56CC8692987C87A003FAC1B /* ViewController.swift */,
 				F56CC87E2987CD98003FAC1B /* VerseViewController.swift */,
-				F5B7415F298809E800676827 /* VerseCell.swift */,
-				F50D63D8298933F900A86658 /* SelectedVerseCell.swift */,
 				F50D63D6298933D700A86658 /* SelectedVerseViewController.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		F56CC87D2987CC59003FAC1B /* Views */ = {
