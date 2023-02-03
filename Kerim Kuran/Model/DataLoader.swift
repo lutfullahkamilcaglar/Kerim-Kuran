@@ -12,6 +12,7 @@ public class DataLoader {
     init() {
         load()
     }
+
     func load() {
         if let fileLocation = Bundle.main.url(forResource: "p1", withExtension: "json"){
             do{
