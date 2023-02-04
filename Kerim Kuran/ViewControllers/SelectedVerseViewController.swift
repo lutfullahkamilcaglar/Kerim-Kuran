@@ -14,8 +14,8 @@ class SelectedVerseViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
+    let dataLoader = DataLoader()
     var data = DataLoader().verseData
-    var filteredData = [VerseData]()
     var NSfilteredData = [NSAttributedString]()
     let fuse = Fuse()
     
@@ -37,61 +37,58 @@ class SelectedVerseViewController: UIViewController {
         tableView.reloadData()
         
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 
+
+    // MARK: - Search Text Arrangement    
     
-    // MARK: - Search Text Arrangement
     
     func filterContentForSearchText(_ searchText: String) {
-        DispatchQueue.global().async {
-            let boldAttrs = [
-                NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17),
-                NSAttributedString.Key.foregroundColor: UIColor.darkText
-            ]
-            let ayetValue = self.data.map { $0.ayetValue }
-            
-            let results = self.fuse.search(searchText, in: ayetValue)
-            
-            var filteredData = [NSMutableAttributedString]()
-            for (index, _, matchedRanges) in results {
-                let verse = self.data[index].ayetValue
+            DispatchQueue.global().async {
+                let boldAttrs = [
+                    NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17),
+                    NSAttributedString.Key.foregroundColor: UIColor.darkText
+                ]
+                let ayetValue = self.data.map { $0.ayetValue }
                 
-                let attributedString = NSMutableAttributedString(string: verse)
-                if !matchedRanges.isEmpty {
-                    let nsRanges = matchedRanges.map(Range.init).map(NSRange.init)
-                    for nsRange in nsRanges {
-                        attributedString.addAttributes(boldAttrs, range: nsRange)
+                let results = self.fuse.search(searchText, in: ayetValue)
+                
+                var filteredData = [NSMutableAttributedString]()
+                for (index, _, matchedRanges) in results {
+                    let value = self.data[index]
+                    let verse = value.ayetValue
+                    let attributedString = NSMutableAttributedString(string: verse)
+                    if !matchedRanges.isEmpty {
+                        let nsRanges = matchedRanges.map(Range.init).map(NSRange.init)
+                        for nsRange in nsRanges {
+                            attributedString.addAttributes(boldAttrs, range: nsRange)
+                        }
                     }
+                    filteredData.append(attributedString)
                 }
-                filteredData.append(attributedString)
-            }
-            DispatchQueue.main.async {
-                self.NSfilteredData = filteredData
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.NSfilteredData = filteredData
+                    self.tableView.reloadData()
+                }
             }
         }
-    }
-
     
 }
 
 // MARK: - UISearchBar Delegate
 extension SelectedVerseViewController: UISearchBarDelegate {
 func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-    filterContentForSearchText(searchBar.text!)
-    }
+        filterContentForSearchText(searchBar.text!)
+}
 }
 
 // MARK: - UISearchResultsUpdating Delegate
+
 extension SelectedVerseViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
+        
     }
 }
-
 
 // MARK: - UITableView
     
@@ -107,14 +104,13 @@ extension SelectedVerseViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! SelectedVerseCell
         let item: NSAttributedString
-        
         if searchController.isActive && searchController.searchBar.text != ""  {
             item = NSfilteredData[indexPath.row]
         }else{
             let verseLabel = data[indexPath.row]
             item = NSAttributedString(string: verseLabel.id + " " + verseLabel.ayetValue )
         }
-        cell.SVerseLabel.attributedText =  item
+            cell.SVerseLabel.attributedText = item
         return cell
     }
 }

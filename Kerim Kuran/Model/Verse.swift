@@ -7,12 +7,11 @@
 
 import Foundation
 
-struct VerseData: Codable {
+struct Verse: Codable {
     var name: String
     var id: String
     var sureId: Int
+    var ayetId: Int
     var ayetValue: String
-    
 }
-
 

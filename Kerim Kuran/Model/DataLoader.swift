@@ -8,21 +8,27 @@
 import Foundation
 
 public class DataLoader {
-    @Published var verseData = [VerseData]()
+    
+    let jsonDecoder = JSONDecoder()
+    
+    @Published var verseData = [Verse]()
+    @Published var verseInfoData = [VerseInfo]()
+    
     init() {
-        load()
+        self.verseData = decodeJson(resourceName: "VerseData") // quran verses
+        self.verseInfoData = decodeJson(resourceName: "VerseInfoData")
     }
-
-    func load() {
-        if let fileLocation = Bundle.main.url(forResource: "p1", withExtension: "json"){
-            do{
-                let data = try Data(contentsOf: fileLocation)
-                let jsonDecoder = JSONDecoder()
-                let dataFromJSON = try jsonDecoder.decode([VerseData].self, from: data)
-                self.verseData = dataFromJSON
-            }catch{
-                print(error)
-            }
+    
+    func decodeJson<T: Decodable>(
+        resourceName: String
+    ) -> [T] {
+        do {
+            let fileLocation = Bundle.main.url(forResource: resourceName, withExtension: "json")
+            let data = try Data(contentsOf: fileLocation!)
+            return try jsonDecoder.decode([T].self, from: data)
+        } catch {
+            print(error)
+            return []
         }
     }
 }

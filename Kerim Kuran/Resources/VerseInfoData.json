@@ -1,0 +1,22 @@
+[
+ {
+  "verseId": 1,
+  "verseName": "Fatiha",
+  "verseInfo": "İniş sırası: 5, Mekki, 7 Ayet."
+ },
+ {
+  "verseId": 2,
+  "verseName": "Bakara",
+  "verseInfo": "İniş sırası: 87, Medeni, 286 ayet. Adını, 67-71 ayetlerde geçen \"bakara\/sığır\" kıssasından almıştır. Hicretin\nilk yıllarında inmiştir."
+ },
+ {
+  "verseId": 3,
+  "verseName": "Al-i İmran",
+  "verseInfo": "İniş sırası: 89, Medeni, 200 ayet. Adını, surede geçen\n\"ali İmran\/İmran Ailesinden\" almıştır."
+ },
+ {
+  "verseId": 4,
+  "verseName": "Nisa",
+  "verseInfo": "İniş sırası: 92, Medeni, Hicretin 3-5 yıllar arasında inmiştir. 176 ayet. Adını, surede geçen “en-Nisa \/ kadınlar\" sözcüğünden almıştır."
+ }
+]
