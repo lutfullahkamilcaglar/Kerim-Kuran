@@ -35,12 +35,9 @@ class SelectedVerseViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
-        
     }
 
-
-    // MARK: - Search Text Arrangement    
-    
+    // MARK: - Search Text Arrangement
     
     func filterContentForSearchText(_ searchText: String) {
             DispatchQueue.global().async {
@@ -49,7 +46,6 @@ class SelectedVerseViewController: UIViewController {
                     NSAttributedString.Key.foregroundColor: UIColor.darkText
                 ]
                 let ayetValue = self.data.map { $0.ayetValue }
-                
                 let results = self.fuse.search(searchText, in: ayetValue)
                 
                 var filteredData = [NSMutableAttributedString]()
@@ -65,6 +61,10 @@ class SelectedVerseViewController: UIViewController {
                     }
                     filteredData.append(attributedString)
                 }
+                // This dispatch queue added for after reloading the
+                DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 DispatchQueue.main.async {
                     self.NSfilteredData = filteredData
                     self.tableView.reloadData()
@@ -86,7 +86,6 @@ func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selec
 extension SelectedVerseViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
-        
     }
 }
 

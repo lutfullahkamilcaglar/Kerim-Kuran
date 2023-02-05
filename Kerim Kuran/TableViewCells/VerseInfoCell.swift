@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VerseCell: UITableViewCell {
+class VerseInfoCell: UITableViewCell {
 
     @IBOutlet weak var verseView: UIView!
     @IBOutlet weak var verseHeaderLabel: UILabel!

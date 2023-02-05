@@ -7,11 +7,11 @@
 
 import UIKit
 
+
 class SelectedVerseCell: UITableViewCell {
 
     @IBOutlet weak var SVerseLabel: UILabel!
     @IBOutlet weak var SverseView: UIView!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +27,11 @@ class SelectedVerseCell: UITableViewCell {
         SverseView.layer.cornerRadius = 10
         SverseView.translatesAutoresizingMaskIntoConstraints = false
         
+        // Button Target
+        
+        
+        
+
     }
 
 }
