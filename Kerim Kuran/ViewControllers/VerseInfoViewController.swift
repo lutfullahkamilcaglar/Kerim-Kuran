@@ -14,17 +14,20 @@ class VerseInfoViewController: UIViewController {
     
     var infoData = DataLoader().verseInfoData
     let searchController = UISearchController(searchResultsController: nil)
-    let dataLoader = DataLoader()
     var data = DataLoader().verseData
     var NSfilteredData = [NSAttributedString]()
     let fuse = Fuse()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Setup the TableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
+        
         self.title = "Tüm Sureler"
+        searchController.searchBar.placeholder = "Arama"
+        
         // Setup the Search Controller
         navigationItem.searchController = searchController
         searchController.loadViewIfNeeded()
@@ -34,18 +37,7 @@ class VerseInfoViewController: UIViewController {
         
         
     }
-//
-//    @objc func goBackToSpecificVC() {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let specificVC = storyboard.instantiateViewController(withIdentifier: "goBackToSpecificVC")
-//        if let viewControllers = navigationController?.viewControllers {
-//            if let index = viewControllers.firstIndex(of: specificVC) {
-//                navigationController?.popToViewController(viewControllers[index], animated: true)
-//            }
-//        }
-//    }
-//
-//
+
     // MARK: - Search Text Arrangement
     
     func filterContentForSearchText(_ searchText: String) {
@@ -108,6 +100,7 @@ extension VerseInfoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showVerse" {
             if let destinationViewController = segue.destination as? VerseViewController {
@@ -134,10 +127,6 @@ extension VerseInfoViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! VerseInfoCell
         cell.verseHeaderLabel.text = String(testLabel.verseId) + " - " + testLabel.verseName
         cell.verseLabel.text = testLabel.verseInfo
-        cell.verseView.layer.cornerRadius = 10
-        cell.verseView.translatesAutoresizingMaskIntoConstraints = false
-        cell.verseView.widthAnchor.constraint(equalToConstant: 329).isActive = true
-        cell.verseView.heightAnchor.constraint(equalToConstant: 136).isActive = true
 
         return cell
     }

@@ -16,20 +16,25 @@ class VerseViewController: UIViewController, UITableViewDelegate {
     var selectedVerseId: Int = 0
     var verses = DataLoader().verseData
     var selectedVerses: [Verse] = []
-    let dataLoader = DataLoader()
-    var data = DataLoader().verseData
+    var verseInfoData = DataLoader().verseInfoData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         selectedVerses = verses.filter { $0.sureId == selectedVerseId }
-        let dataMap = self.data.map { $0.ayetValue }
+        
+        for verse in verseInfoData {
+            let name = verse.verseName
+            if selectedVerseId == verse.verseId {
+                self.title = name
+            }
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
         
-        
     }
-    
 }
 
 // MARK: - TableView

@@ -7,16 +7,566 @@
  {
   "verseId": 2,
   "verseName": "Bakara",
-  "verseInfo": "İniş sırası: 87, Medeni, 286 ayet. Adını, 67-71 ayetlerde geçen \"bakara\/sığır\" kıssasından almıştır. Hicretin\nilk yıllarında inmiştir."
+  "verseInfo": "İniş sırası: 87, Medeni, 286 ayet. Adını, 67-71 ayetlerde geçen \"bakara\/sığır\" kıssasından almıştır. Hicretin ilk yıllarında inmiştir."
  },
  {
   "verseId": 3,
   "verseName": "Al-i İmran",
-  "verseInfo": "İniş sırası: 89, Medeni, 200 ayet. Adını, surede geçen\n\"ali İmran\/İmran Ailesinden\" almıştır."
+  "verseInfo": "İniş sırası: 89, Medeni, 200 ayet. Adını, surede geçen\"A’li İmran\/İmran Ailesinden\" almıştır."
  },
  {
   "verseId": 4,
   "verseName": "Nisa",
   "verseInfo": "İniş sırası: 92, Medeni, Hicretin 3-5 yıllar arasında inmiştir. 176 ayet. Adını, surede geçen “en-Nisa \/ kadınlar\" sözcüğünden almıştır."
+ },
+ {
+  "verseId": 5,
+  "verseName": "Maide",
+  "verseInfo": "İniş sırası: 112, Medeni, Hicretin 6. Yılında indirilmiştir. 120 ayettir.\nAdını, 112. Ve 114. ayette geçen “maide\/sofra” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 6,
+  "verseName": "En’am",
+  "verseInfo": "İniş sırası: 55, Mekki, Mekke döneminin ikinci yarısında inmiştir. Bazı ayetleri Medine’de inmiştir. 165 âyettir. Adını 137,138, 139 ve 141. âyetlerde geçen “hayvanlar (geviş getiren)” anlamındaki en’am sözcüğünden almıştır"
+ },
+ {
+  "verseId": 7,
+  "verseName": "A’raf",
+  "verseInfo": "İniş sırası: 39, Mekki, 206 ayet.\nAdını 46. ve 48. ayetlerdeki “A’râf\/tepe, sur” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 8,
+  "verseName": "Enfal",
+  "verseInfo": "İniş sırası: 88, Medeni, 75 ayet.\nAdını 1. Ayette geçen “enfâl\/karşılıksız vermek” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 9,
+  "verseName": "Tevbe",
+  "verseInfo": "İniş sırası: 113, Medeni, 129 ayet.\nAdını 102 ve 118. Ayetlerde geçen tövbe konusundan almaktadır.\nDiğer bir ismi de Berâ’e Sûresi’dir. Hicretin 9. Yılında inmiştir.\nBu “Besmele” ile başlamayan bir suredir."
+ },
+ {
+  "verseId": 10,
+  "verseName": "Yunus",
+  "verseInfo": "İniş sırası: 51, Mekki, 109 ayet.\nAdını, 98. ayette geçen “Yûnus’un kavmi” ifadesinden almıştır."
+ },
+ {
+  "verseId": 11,
+  "verseName": "Hud",
+  "verseInfo": "İniş sırası: 52, Mekki, 123 ayet.\nAdını, sûrede geçen “Hûd Nebi’den” almıştır."
+ },
+ {
+  "verseId": 12,
+  "verseName": "Yusuf",
+  "verseInfo": "İniş sırası: 53, Mekki, 111 ayet.\nAdını surede geçen “Yusûf” kıssasından almıştır."
+ },
+ {
+  "verseId": 13,
+  "verseName": "Ra’d",
+  "verseInfo": "İniş sırası: 96, Mekki\/Medeni, 43 ayet.\nAdını 13. ayetteki “er-ra’d\/şimşek, gök gürültüsü” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 14,
+  "verseName": "İbrahim",
+  "verseInfo": "İniş sırası: 72, Mekki, 52 ayet.\nAdını 35-41. Ayetlerde konu edinilen “İbrâhîm Nebiden” almıştır."
+ },
+ {
+  "verseId": 15,
+  "verseName": "Hicr",
+  "verseInfo": "İniş sırası: 54, Mekki, 99 ayet.\nAdını, 80. âyette geçen “Hicr (Tebük-Medine arasında bir yer adı)”\nsözcüğünden almıştır."
+ },
+ {
+  "verseId": 16,
+  "verseName": "Nahl",
+  "verseInfo": "İniş sırası: 70, Mekki, 128 ayet.\nAdını, 68. ayette geçen “Nahl \/ bal arısı” sözcüğünden almıştır.\nMekke döneminin sonlarında inmiştir"
+ },
+ {
+  "verseId": 17,
+  "verseName": "İsra",
+  "verseInfo": "İniş sırası: 50, Mekki, 111 ayet.\nAdını 1. ayetteki “İsrâ\/ gece yolculuğu” sözcüğünden almıştır. Mekke döneminin ortalarında indirilmiştir."
+ },
+ {
+  "verseId": 18,
+  "verseName": "Kehf",
+  "verseInfo": "İniş sırası: 69, Mekki, 110 ayet.\nAdını 9. ayetindeki “Kehf\/büyük mağara” sözcüğünden almıştır.\nMekke dönemi ortalarında inmiştir."
+ },
+ {
+  "verseId": 19,
+  "verseName": "Meryem",
+  "verseInfo": "İniş sırası: 44, Mekki, 98 ayet.\nAdını surede geçen “Meryem” kıssasından almıştır."
+ },
+ {
+  "verseId": 20,
+  "verseName": "Taha",
+  "verseInfo": "İniş sırası: 45, Mekki, 135 ayet.\nAdını 1. ayetteki “Tâ Hâ” harflerinden almıştır."
+ },
+ {
+  "verseId": 21,
+  "verseName": "Enbiya",
+  "verseInfo": "İniş sırası: 73, Mekki, 112 ayet.\nAdını surede geçen “Nebiler” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 22,
+  "verseName": "Hacc",
+  "verseInfo": "İniş sırası: 103, Mekki mi Medeni mi olduğu tartışmalıdır, 78 ayet.\nAdını 27. ayetteki “El-Hacc” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 23,
+  "verseName": "Mu’minun",
+  "verseInfo": "İniş sırası: 74, Mekki, 118 ayet.\nAdını 1. Ayetteki “Mu’minler” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 24,
+  "verseName": "Nur",
+  "verseInfo": "İniş sırası: 102, Medeni, 64 ayet.\nAdını 35. ayetteki “Nûr\/aydınlık, ışık” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 25,
+  "verseName": "Furkan",
+  "verseInfo": "İniş sırası: 42, Mekki, 77 ayet. Adını 1. ayetteki “Furkân\/Doğruyu yanlıştan ayıran” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 26,
+  "verseName": "Şu’ara",
+  "verseInfo": "İniş sırası: 47, Mekki, 227 ayet.\nAdını 224. ayetteki “Şuarâ\/şairler” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 27,
+  "verseName": "Neml",
+  "verseInfo": "İniş sırası: 48, Mekki, 93 ayet.\nAdını 18. ayetteki “Neml\/karınca” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 28,
+  "verseName": "Kasas",
+  "verseInfo": "İniş sırası: 49, Mekki, 88 ayet.\nAdını 25. âyetteki “El-Kasas\/hikaye anlatma” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 29,
+  "verseName": "Ankebut",
+  "verseInfo": "İniş sırası: 85, Mekki, 69 ayet. Adını 41. âyetteki “Ankebût\/örümcek” sözcüğünden almıştır. Mekke’de inen en son sûre olduğu söylenmektedir."
+ },
+ {
+  "verseId": 30,
+  "verseName": "Rum",
+  "verseInfo": "İniş sırası: 84, Mekki, 60 ayet.\nAdını 2. ayetteki “Er-Rûm\/Romalılar” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 31,
+  "verseName": "Lokman",
+  "verseInfo": "İniş sırası: 57, Mekki, 34 ayet.\nAdını 12. ve 13. ayetlerdeki “Lokmân” sözcüğünden almıştır.\nMekke döneminin ortalarında inmiştir."
+ },
+ {
+  "verseId": 32,
+  "verseName": "Secde",
+  "verseInfo": "İniş sırası: 75, Mekki, 30 ayet.\nAdını 15. âyetteki “Succeden\/secde edenler” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 33,
+  "verseName": "Ahzab",
+  "verseInfo": "İniş sırası: 90, Medeni, 73 ayet.\nAdını 20. âyetteki “El-Ahzâb\/kabileler” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 34,
+  "verseName": "Sebe",
+  "verseInfo": "İniş sırası: 58, Mekki, 54 ayet.\nAdını 15. ayetteki “Sebe\/Yemen’de bir bölge” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 35,
+  "verseName": "Fatır",
+  "verseInfo": "İniş sırası: 43, Mekki, 45 ayet.\nAdını 1. ayetteki “Fâtır\/fıtrat, yaradılış” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 36,
+  "verseName": "Yasin",
+  "verseInfo": "İniş sırası: 41, Mekki, 83 ayet.\nAdını 1. ayetteki “Yâ-Sîn” harflerinden almıştır."
+ },
+ {
+  "verseId": 37,
+  "verseName": "Saffat",
+  "verseInfo": "İniş sırası: 56, Mekki, 182 ayet.\nAdını 1. âyetteki “Sâffât\/sıra sıra duranlar” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 38,
+  "verseName": "Sad",
+  "verseInfo": "İniş sırası: 38, Mekki, 88 ayet.\nAdını 1. ayetteki “Sad” harfinden almıştır."
+ },
+ {
+  "verseId": 39,
+  "verseName": "Zumer",
+  "verseInfo": "İniş sırası: 59, Mekki, 75 ayet.\nAdını 71. ve 73. ayetteki “Zumeran\/topluluklar” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 40,
+  "verseName": "Mu’min\/Gafir",
+  "verseInfo": "İniş sırası: 60, Mekki, 85 ayet.\nAdını 28. ve 45. ayetteki “Mu’min\/inanan, iman eden” sözcüğünden almıştır. Sûrenin diğer bir ismi de “ğâfir”dir."
+ },
+ {
+  "verseId": 41,
+  "verseName": "Fussilet",
+  "verseInfo": "İniş sırası: 61, Mekki, 54 ayet.\nAdını 3. ayetteki “Fussilet\/detaylandırılmış” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 42,
+  "verseName": "Şura",
+  "verseInfo": "İniş sırası: 62, Mekki, 53 ayet.\nAdını 38. ayetteki “Şûrâ\/danışma” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 43,
+  "verseName": "Zuhruf",
+  "verseInfo": "İniş sırası: 63, Mekki, 89 ayet.\nAdını 35. ayetteki “Zuhrûf\/altın” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 44,
+  "verseName": "Duhan",
+  "verseInfo": "İniş sırası: 64, Mekki, 59 ayet.\nAdını 10. ayetteki “Duhân\/duman” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 45,
+  "verseName": "Casiye",
+  "verseInfo": "İniş sırası: 65, Mekki, 37 ayet.\nAdını 28. ayetteki “Câsiye\/diz çökmüş” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 46,
+  "verseName": "Ahkaf",
+  "verseInfo": "İniş sırası: 66, Mekki, 35 ayet.\nAdını 21. ayetteki “Ahkâf\/kum tepeleri” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 47,
+  "verseName": "Muhammed",
+  "verseInfo": "İniş sırası: 95, Medeni, 38 Ayet.\nAdını 2. ayetteki “Muhammed” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 48,
+  "verseName": "Feth",
+  "verseInfo": "İniş sırası: 111, Medeni, 29 ayet.\nAdını 1. ayetteki “Feth\/açmak, savaş yolu ile bir yeri almak” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 49,
+  "verseName": "Hucurat",
+  "verseInfo": "İniş sırası: 106, Medeni, 18 ayet.\nAdını 4. ayetteki “Hucurât\/odalar” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 50,
+  "verseName": "Kaf",
+  "verseInfo": "İniş sırası: 34, Mekki, 45 ayet.\nAdını 1. ayetteki “Kaf” harfinden almıştır."
+ },
+ {
+  "verseId": 51,
+  "verseName": "Zariyat",
+  "verseInfo": "İniş sırası: 67, Mekki, 60 ayet.\nAdını 1. ayetteki “Ez-Zâriyât\/rüzgâr, esip savuran” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 52,
+  "verseName": "Tur",
+  "verseInfo": "İniş sırası: 76, Mekki, 49 ayet.\nAdını 1. ayetteki “tur\/dağ” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 53,
+  "verseName": "Necm",
+  "verseInfo": "İniş sırası: 23, Mekki, 62 ayet.\nAdını 1. ayetteki “Necm\/yıldız, Kur’an’ın bir bölümü” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 54,
+  "verseName": "Kamer",
+  "verseInfo": "İniş sırası: 37, Mekki, 55 ayet.\nAdını 1. ayetteki “El-Kamer\/ay” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 55,
+  "verseName": "Rahman",
+  "verseInfo": "İniş sırası: 97, Mekki, 78 ayet.\nAdını 1. ayetteki “er-Rahman\/Rahmeti Bol” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 56,
+  "verseName": "Vakıa",
+  "verseInfo": "İniş sırası: 46, Mekki, 96 ayet.\nAdını 1. ayetteki “El-Vâkıa\/müthiş olay, Kıyamet” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 57,
+  "verseName": "Hadid",
+  "verseInfo": "İniş sırası: 94, Medeni, 29 ayet.\nAdını 25. ayetteki “Hadîd\/demir” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 58,
+  "verseName": "Mucadele",
+  "verseInfo": "İniş sırası: 105, Medeni, 22 ayet.\nAdını 1. ayetteki “Tucâdiluke\/tartışan” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 59,
+  "verseName": "Haşr",
+  "verseInfo": "İniş sırası: 101, Medeni, 24 ayet.\nAdını 2. ayetteki “El-Haşr\/bir araya toplama” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 60,
+  "verseName": "Mumtehine",
+  "verseInfo": "İniş sırası: 91, Medeni, 13 ayet.\nAdını 10. ayette geçen “Femtehınuhunne\/imtihan olunan kadın”\nsözcüğünden almıştır."
+ },
+ {
+  "verseId": 61,
+  "verseName": "Saff",
+  "verseInfo": "İniş sırası: 109, Medeni, 14 ayet.\nAdını 4. ayette geçen “saff\/sıra sıra dizilmek” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 62,
+  "verseName": "Cumua",
+  "verseInfo": "İniş sırası: 110, Medeni, 11 ayet.\nAdını 9. ayette geçen “el-cum’a\/toplanmak” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 63,
+  "verseName": "Munafikun",
+  "verseInfo": "İniş sırası: 104, Medeni, 11 ayet.\nAdını 1. ayette geçen “Münafikûn\/münafık ‘(iki yüzlü)” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 64,
+  "verseName": "Teğabun",
+  "verseInfo": "İniş sırası: 108, Medeni, 18 ayet.\nAdını 9. ayette geçen “teğabun\/birbirini aldatma” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 65,
+  "verseName": "Talak",
+  "verseInfo": "İniş sırası: 99, Medeni, 12 ayet.\nAdını 1. ve 7. ayetlerdeki Talâk\/boşanma konusundan almıştır."
+ },
+ {
+  "verseId": 66,
+  "verseName": "Tahrim",
+  "verseInfo": "İniş sırası: 107, Medeni, 12 ayet.\nAdını 1. ayetteki “tuharrimu\/haram kılmak” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 67,
+  "verseName": "Mulk",
+  "verseInfo": "İniş sırası: 77, Mekki, 30 Ayet.\nAdını 1. ayette yer alan “el-Mülk\/egemenlik” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 68,
+  "verseName": "Kalem",
+  "verseInfo": "İniş sırası: 2, Mekki, 52 ayet.\nAdını 1. ayetteki “kalem” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 69,
+  "verseName": "Hakka",
+  "verseInfo": "İniş sırası: 78, Mekki, 52 ayet.\nAdını 1. ayetteki “Hakka\/ gerçekleşmesi kesin olan” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 70,
+  "verseName": "Mearic",
+  "verseInfo": "İniş sırası: 79, Mekki, 44 ayet.\nAdını Ma’rec’in çoğulu olan 3. ayetteki “Meâric\/ merdiven- yükseliş zamanları” sözcüğünden almıştır.]"
+ },
+ {
+  "verseId": 71,
+  "verseName": "Nuh",
+  "verseInfo": "İniş sırası: 71, Mekki, 28 ayet.\nAdını surenin konusu olan “Nûh Nebi” kıssasından almıştır."
+ },
+ {
+  "verseId": 72,
+  "verseName": "Cinn",
+  "verseInfo": "İniş sırası: 40, Mekki, 28 ayet.\nAdını 1. ayette geçen “el-cinn\/yabancı, tanınmayan” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 73,
+  "verseName": "Muzemmil",
+  "verseInfo": "İniş sırası: 3, Mekki, 20 ayet.\nAdını 1. ayette geçen “El’Muzzemmil\/örtüsüne bürünen” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 74,
+  "verseName": "Muddesir",
+  "verseInfo": "İniş sırası: 4, Mekki, 56 ayet.\nAdını 1. ayetteki “Muddessir\/örtüye bürünen” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 75,
+  "verseName": "Kıyamet",
+  "verseInfo": "İniş sırası: 31, Mekki, 40 ayet.\nAdını 1. ayetteki “el-Kıyamet” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 76,
+  "verseName": "İnsan",
+  "verseInfo": "İniş sırası: 98, Medeni, 31 ayet.\nAdını 1. ayetteki “El -İnsân” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 77,
+  "verseName": "Murselat",
+  "verseInfo": "İniş sırası: 33, Mekki, 50 ayet.\nAdını 1. ayetteki “el-Murselat\/gönderilenler” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 78,
+  "verseName": "Nebe’",
+  "verseInfo": "İniş sırası: 80, Mekki, 40 ayet.\nAdını 2. ayetteki “Nebe’\/önemli haber” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 79,
+  "verseName": "Naziat",
+  "verseInfo": "İniş sırası: 81, Mekki, 46 ayet.\nAdını 1. ayetteki “En-Nâziât\/derinden çekip alan” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 80,
+  "verseName": "Abese",
+  "verseInfo": "İniş sırası: 24, Mekki, 42 ayet.\nAdını 1. ayetteki “Abese\/surat astı” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 81,
+  "verseName": "Tekvir",
+  "verseInfo": "İniş sırası: 7, Mekki, 29 ayet.\nAdını 1. ayetteki “Kuvvirat\/ köreltildi” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 82,
+  "verseName": "İnfitar",
+  "verseInfo": "İniş sırası: 82, Mekki, 19 ayet.\nAdını 1. ayetteki “İnfatarat” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 83,
+  "verseName": "Mutaffifin",
+  "verseInfo": "İniş sırası: 86, Mekki, 36 ayet.\nAdını 1. ayetteki “El Mutaffifin\/hile yapanlar” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 84,
+  "verseName": "İnşikak",
+  "verseInfo": "İniş sırası: 83, Mekki, 25 ayet.\nAdını 1. ayetteki “İnşikak\/yarılmak” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 85,
+  "verseName": "Buruc",
+  "verseInfo": "İniş sırası: 27, Mekki, 22 ayet.\nAdını 1. ayetteki “el-buruc\/burçlar” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 86,
+  "verseName": "Tarık",
+  "verseInfo": "İniş sırası: 36, Mekki, 17 ayet.\nAdını 1. ayetteki “et-tarık\/seher yıldızı” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 87,
+  "verseName": "A’la",
+  "verseInfo": "İniş sırası: 8, Mekki, 19 ayet.\nAdını 1. ayetteki “a’la\/yüce” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 88,
+  "verseName": "Gaşiye",
+  "verseInfo": "İniş sırası: 68, Mekki, 26 ayet.\nAdını 1. ayetteki “ğaşiye\/kaplayan,bürüyen” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 89,
+  "verseName": "Fecr",
+  "verseInfo": "İniş sırası: 10, Mekki, 30 ayet.\nAdını 1. ayetteki “fecr\/tan yerinin ağarması” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 90,
+  "verseName": "Beled",
+  "verseInfo": "İniş sırası: 35, Mekki, 20 ayet.\nAdını 1. ayetteki “El-Beled\/belde, kent” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 91,
+  "verseName": "Şems",
+  "verseInfo": "İniş sırası: 26, Mekki, 15 ayet.\nAdını 1. ayetteki “Eş-Şems\/Güneş” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 92,
+  "verseName": "Leyl",
+  "verseInfo": "İniş sırası: 9, Mekki, 21 ayet.\nAdını 1. ayetteki “El-Leyl\/gece” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 93,
+  "verseName": "Duha",
+  "verseInfo": "İniş sırası: 11, Mekki, 11 ayet.\nAdını 1. ayetteki “duha\/kuşluk vakti” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 94,
+  "verseName": "İnşirah",
+  "verseInfo": "İniş sırası: 12, Mekki, 8 ayet.\nAdını 1. ayetteki “İnşirâh\/açmak” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 95,
+  "verseName": "Tin",
+  "verseInfo": "İniş sırası: 28, Mekki, 8 ayet.\nAdını 1. ayetteki “Tîn\/incir” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 96,
+  "verseName": "Alak",
+  "verseInfo": "İniş sırası: 1, Mekki, 19 ayet.\nAdını 2. ayetteki “alak\/asılmış, tutunmuş olan” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 97,
+  "verseName": "Kadr",
+  "verseInfo": "İniş sırası: 25, Mekki, 5 ayet.\nAdını 1. ayetteki “Kadr\/değerli” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 98,
+  "verseName": "Beyyine",
+  "verseInfo": "İniş sırası: 100, Medeni, 8 ayet.\nAdını 1. ayetteki “El-Beyyine\/kanıt içeren bilgi” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 99,
+  "verseName": "Zilzal",
+  "verseInfo": "İniş sırası: 93, Mekki, 8 ayet.\nAdını 1. ayetteki “Zilzâl\/sarsıntı” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 100,
+  "verseName": "Adiyat",
+  "verseInfo": "İniş sırası: 14, Mekki, 11 ayet.\nAdını 1. ayetteki “adiyat\/koşan” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 101,
+  "verseName": "Karia",
+  "verseInfo": "İniş sırası: 30, Mekki, 11 ayet.\nAdını 1. ayetteki “El-Kâria\/şiddetli ses” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 102,
+  "verseName": "Tekasür",
+  "verseInfo": "İniş sırası: 16, Mekki, 8 ayet.\nAdını 1. ayetteki “Tekâsur\/çoklukla övünme” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 103,
+  "verseName": "Asr",
+  "verseInfo": "İniş sırası: 13, Mekki, 3 ayet.\nAdını 1. ayetteki “Asr\/zaman, çağ” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 104,
+  "verseName": "Humezeh",
+  "verseInfo": "İniş sırası: 32, Mekki, 9 ayet.\nAdını 1. ayetteki “Humezeh\/ kaş göz hareketiyle alay edenler” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 105,
+  "verseName": "Fil",
+  "verseInfo": "İniş sırası: 19, Mekki, 5 ayet.\nAdını 1. ayetteki “Fîl” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 106,
+  "verseName": "Kureyş",
+  "verseInfo": "İniş sırası: 29, Mekki, 4 ayet.\nAdını 1. ayetteki “Kureyş\/Bir Arap kabilesinin adı” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 107,
+  "verseName": "Maun",
+  "verseInfo": "İniş sırası: 17, Mekki, 7 ayet.\nAdını 7. ayetteki “maun\/küçük yardım” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 108,
+  "verseName": "Kevser",
+  "verseInfo": "İniş sırası: 15, Mekki, 3 ayet.\nAdını 1. ayetteki “Kevser\/çokluk, nimet, şeref, değer” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 109,
+  "verseName": "Kafirun",
+  "verseInfo": "İniş sırası: 18, Mekki, 6 ayet.\nAdını 1. ayetteki “kafirun\/örtmek” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 110,
+  "verseName": "Nasr",
+  "verseInfo": "İniş sırası: 114, Medeni, 3 ayet.\nAdını 1. ayetteki “Nasr\/yardım” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 111,
+  "verseName": "Tebbet\/Mesed",
+  "verseInfo": "İniş sırası: 6, Mekki, 5 ayet.\nAdını 1. ayetteki “Tebbet\/ kurusun, kahrolsun” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 112,
+  "verseName": "İhlas",
+  "verseInfo": "İniş sırası: 22, Mekki, 4 ayet.\nAdını surenin içeriğinden almıştır."
+ },
+ {
+  "verseId": 113,
+  "verseName": "Felak",
+  "verseInfo": "İniş sırası: 20, Mekki, 5 ayet.\nAdını 1. ayetteki “Felek\/yarıp çıkaran” sözcüğünden almıştır."
+ },
+ {
+  "verseId": 114,
+  "verseName": "Nas",
+  "verseInfo": "İniş sırası: 21, Mekki, 6 ayet.\nAdını 1. ayetteki “nas\/insanlar” sözcüğünden almıştır."
  }
 ]

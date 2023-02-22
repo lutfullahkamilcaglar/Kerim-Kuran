@@ -12,7 +12,6 @@
 		F50D63D9298933F900A86658 /* SelectedVerseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50D63D8298933F900A86658 /* SelectedVerseCell.swift */; };
 		F50D63DB2989435400A86658 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50D63DA2989435400A86658 /* Verse.swift */; };
 		F50D63DD29894C9500A86658 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50D63DC29894C9400A86658 /* DataLoader.swift */; };
-		F542954B298DBEA00073BD52 /* VerseInfoData.json in Resources */ = {isa = PBXBuildFile; fileRef = F542954A298DBEA00073BD52 /* VerseInfoData.json */; };
 		F542954D298DC46D0073BD52 /* VerseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542954C298DC46D0073BD52 /* VerseViewController.swift */; };
 		F542954F298DC5A70073BD52 /* VerseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542954E298DC5A70073BD52 /* VerseViewCell.swift */; };
 		F5429551298DDD730073BD52 /* VerseData.json in Resources */ = {isa = PBXBuildFile; fileRef = F5429550298DDD730073BD52 /* VerseData.json */; };
@@ -45,6 +44,8 @@
 		F56CC8802987CD98003FAC1B /* VerseInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CC87E2987CD98003FAC1B /* VerseInfoViewController.swift */; };
 		F5B741582987DD5900676827 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B741572987DD5900676827 /* Constants.swift */; };
 		F5B74160298809E800676827 /* VerseInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7415F298809E800676827 /* VerseInfoCell.swift */; };
+		F5C85FB929A6CE3A0002F28C /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C85FB829A6CE3A0002F28C /* ContactViewController.swift */; };
+		F5D287512994DEEC00F053F7 /* VerseInfoData.json in Resources */ = {isa = PBXBuildFile; fileRef = F5D287502994DEEC00F053F7 /* VerseInfoData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +56,6 @@
 		F50D63D8298933F900A86658 /* SelectedVerseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedVerseCell.swift; sourceTree = "<group>"; };
 		F50D63DA2989435400A86658 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
 		F50D63DC29894C9400A86658 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
-		F542954A298DBEA00073BD52 /* VerseInfoData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VerseInfoData.json; sourceTree = "<group>"; };
 		F542954C298DC46D0073BD52 /* VerseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewController.swift; sourceTree = "<group>"; };
 		F542954E298DC5A70073BD52 /* VerseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewCell.swift; sourceTree = "<group>"; };
 		F5429550298DDD730073BD52 /* VerseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VerseData.json; sourceTree = "<group>"; };
@@ -90,6 +90,8 @@
 		F56CC87E2987CD98003FAC1B /* VerseInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseInfoViewController.swift; sourceTree = "<group>"; };
 		F5B741572987DD5900676827 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F5B7415F298809E800676827 /* VerseInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseInfoCell.swift; sourceTree = "<group>"; };
+		F5C85FB829A6CE3A0002F28C /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		F5D287502994DEEC00F053F7 /* VerseInfoData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VerseInfoData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +164,7 @@
 			children = (
 				F5429552298F195E0073BD52 /* Poppins */,
 				F5429550298DDD730073BD52 /* VerseData.json */,
-				F542954A298DBEA00073BD52 /* VerseInfoData.json */,
+				F5D287502994DEEC00F053F7 /* VerseInfoData.json */,
 				F5B741572987DD5900676827 /* Constants.swift */,
 			);
 			path = Resources;
@@ -219,6 +221,7 @@
 				F542954C298DC46D0073BD52 /* VerseViewController.swift */,
 				F56CC87E2987CD98003FAC1B /* VerseInfoViewController.swift */,
 				F50D63D6298933D700A86658 /* SelectedVerseViewController.swift */,
+				F5C85FB829A6CE3A0002F28C /* ContactViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				F542956A298F195F0073BD52 /* Poppins-Light.ttf in Resources */,
 				F542956B298F195F0073BD52 /* Poppins-Medium.ttf in Resources */,
 				F5429568298F195F0073BD52 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				F5D287512994DEEC00F053F7 /* VerseInfoData.json in Resources */,
 				F5429574298F195F0073BD52 /* Poppins-Black.ttf in Resources */,
 				F5429577298F195F0073BD52 /* Poppins-Italic.ttf in Resources */,
 				F5429566298F195F0073BD52 /* Poppins-ExtraLight.ttf in Resources */,
@@ -313,7 +317,6 @@
 				F5429575298F195F0073BD52 /* Poppins-Thin.ttf in Resources */,
 				F56CC86D2987C87A003FAC1B /* Main.storyboard in Resources */,
 				F542956E298F195F0073BD52 /* Poppins-ExtraBold.ttf in Resources */,
-				F542954B298DBEA00073BD52 /* VerseInfoData.json in Resources */,
 				F5429567298F195F0073BD52 /* Poppins-ThinItalic.ttf in Resources */,
 				F5429551298DDD730073BD52 /* VerseData.json in Resources */,
 			);
@@ -369,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F56CC8802987CD98003FAC1B /* VerseInfoViewController.swift in Sources */,
+				F5C85FB929A6CE3A0002F28C /* ContactViewController.swift in Sources */,
 				F56CC86A2987C87A003FAC1B /* MainViewController.swift in Sources */,
 				F50D63DB2989435400A86658 /* Verse.swift in Sources */,
 				F56CC8662987C87A003FAC1B /* AppDelegate.swift in Sources */,

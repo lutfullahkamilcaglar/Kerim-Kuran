@@ -76,9 +76,10 @@ class SelectedVerseViewController: UIViewController {
 
 // MARK: - UISearchBar Delegate
 extension SelectedVerseViewController: UISearchBarDelegate {
-func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         filterContentForSearchText(searchBar.text!)
-}
+        
+    }
 }
 
 // MARK: - UISearchResultsUpdating Delegate
