@@ -10,9 +10,12 @@ import Fuse
 
 class VerseInfoViewController: UIViewController {
     
+    // MARK: - Properties
+    
     @IBOutlet weak var tableView: UITableView!
     
     var infoData = DataLoader().verseInfoData
+    var filteredVerseInfoData = [VerseInfo]()
     let searchController = UISearchController(searchResultsController: nil)
     var data = DataLoader().verseData
     var NSfilteredData = [NSAttributedString]()
@@ -44,16 +47,28 @@ class VerseInfoViewController: UIViewController {
         DispatchQueue.global().async {
             let boldAttrs = [
                 NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17),
-                NSAttributedString.Key.foregroundColor: UIColor.darkText
+                NSAttributedString.Key.foregroundColor: UIColor.red
             ]
-            let ayetValue = self.data.map { $0.ayetValue }
-            let results = self.fuse.search(searchText, in: ayetValue)
+            
+            let verseName = self.infoData.map {$0.verseName }
+            let verseId = self.infoData.map { String($0.verseId) }
+            
+            var combinedVerses = [String]()
+            for (index, verse) in verseName.enumerated() {
+                let combinedVerse = "\(verseId[index]) - \(verse)"
+                combinedVerses.append(combinedVerse)
+            }
+            
+            let verseResults = self.fuse.search(searchText, in: combinedVerses)
             
             var filteredData = [NSMutableAttributedString]()
-            for (index, _, matchedRanges) in results {
-                let value = self.data[index]
-                let verse = value.ayetValue
-                let attributedString = NSMutableAttributedString(string: verse)
+            var filteredVerseInfoData = [VerseInfo]()
+            
+            for (index, _, matchedRanges) in verseResults {
+                
+                let verseInfoData = self.infoData[index]
+                
+                let attributedString = NSMutableAttributedString(string: combinedVerses[index])
                 if !matchedRanges.isEmpty {
                     let nsRanges = matchedRanges.map(Range.init).map(NSRange.init)
                     for nsRange in nsRanges {
@@ -61,17 +76,21 @@ class VerseInfoViewController: UIViewController {
                     }
                 }
                 filteredData.append(attributedString)
+                filteredVerseInfoData.append(verseInfoData)
             }
+
             // This dispatch queue added for after reloading the
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
             DispatchQueue.main.async {
                 self.NSfilteredData = filteredData
+                self.filteredVerseInfoData = filteredVerseInfoData
                 self.tableView.reloadData()
             }
         }
     }
+
 }
 
 
@@ -106,7 +125,16 @@ extension VerseInfoViewController: UITableViewDataSource, UITableViewDelegate {
             if let destinationViewController = segue.destination as? VerseViewController {
                 let indexPath = self.tableView.indexPathForSelectedRow!
                 let index = indexPath.row
-                let verseId = infoData[index].verseId
+                let verseId: Int
+
+                let isSearchActive = searchController.isActive && searchController.searchBar.text != ""
+                
+                if isSearchActive {
+                    verseId = filteredVerseInfoData[index].verseId
+                } else {
+                    verseId = infoData[index].verseId
+                }
+                
                 destinationViewController.selectedVerseId = verseId
                 tableView.deselectRow(at: indexPath, animated: true)
             }
@@ -118,16 +146,32 @@ extension VerseInfoViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return NSfilteredData.count
+        }
         return infoData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let testLabel = infoData[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! VerseInfoCell
-        cell.verseHeaderLabel.text = String(testLabel.verseId) + " - " + testLabel.verseName
-        cell.verseLabel.text = testLabel.verseInfo
-
+        
+        let verseInfoData: VerseInfo
+        let headerText: NSAttributedString
+        
+        let isSearchActive = searchController.isActive && searchController.searchBar.text != ""
+        
+        if isSearchActive {
+            verseInfoData = self.filteredVerseInfoData[indexPath.row]
+            headerText = NSfilteredData[indexPath.row]
+        } else{
+            verseInfoData = self.infoData[indexPath.row]
+            headerText = NSAttributedString(string: String(verseInfoData.verseId) + " - " + verseInfoData.verseName)
+        }
+        
+        cell.verseHeaderLabel.attributedText = headerText
+        cell.verseLabel.text = verseInfoData.verseInfo
+        
         return cell
     }
 }

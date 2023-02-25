@@ -16,7 +16,7 @@ public class DataLoader {
     
     init() {
         self.verseData = decodeJson(resourceName: "VerseData") // quran verses
-        self.verseInfoData = decodeJson(resourceName: "VerseInfoData")
+        self.verseInfoData = decodeJson(resourceName: "VerseInfoData") 
     }
     
     func decodeJson<T: Decodable>(

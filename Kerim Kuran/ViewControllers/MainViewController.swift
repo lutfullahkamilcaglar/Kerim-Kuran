@@ -17,11 +17,11 @@ class MainViewController: UIViewController {
     let fuse = Fuse()
     
     
-    @IBOutlet weak var allVerseButton:  UIButton!
-    @IBOutlet weak var continueButton:  UIButton!
-    @IBOutlet weak var prefaceButton:   UIButton!
-    @IBOutlet weak var aboutButton:     UIButton!
-    @IBOutlet weak var contactButton:   UIButton!
+    @IBOutlet weak var allVerseButton: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var prefaceButton : UIButton!
+    @IBOutlet weak var aboutButton   : UIButton!
+    @IBOutlet weak var contactButton : UIButton!
     
     //Buttons image setups
     let verseButtonImage    = UIImageView(image: UIImage(named: "showVerseIcon"))
@@ -107,6 +107,7 @@ class MainViewController: UIViewController {
         verseButtonLabel.lineBreakMode = .byWordWrapping
         verseButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
         verseButtonLabel.text = "Tüm Sureleri gör"
+        verseButtonLabel.textColor = .black
         verseButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         verseButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         verseButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
@@ -124,7 +125,7 @@ class MainViewController: UIViewController {
         //button image setup
         continueButton.layer.cornerRadius = 15
         continueButton.addSubview(continueButtonImage)
-        continueButtonImage.frame = CGRect(x: 0, y: 0, width: 46, height: 46)
+        //continueButtonImage.frame = CGRect(x: 0, y: 0, width: 46, height: 46)
         continueButtonImage.translatesAutoresizingMaskIntoConstraints = false
         continueButtonImage.widthAnchor.constraint(equalToConstant: 46).isActive = true
         continueButtonImage.heightAnchor.constraint(equalToConstant: 46).isActive = true
@@ -135,7 +136,7 @@ class MainViewController: UIViewController {
         
         //button label setup
         continueButton.addSubview(continueButtonLabel)
-        continueButtonLabel.frame = CGRect(x: 0, y: 0, width: 121, height: 56)
+        //continueButtonLabel.frame = CGRect(x: 0, y: 0, width: 121, height: 56)
         continueButtonLabel.numberOfLines = 0
         continueButtonLabel.lineBreakMode = .byWordWrapping
         continueButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
@@ -252,7 +253,8 @@ class MainViewController: UIViewController {
         //button view set
         contactButton.layer.cornerRadius = 12
         contactButton.layer.borderWidth = 1
-        contactButton.layer.borderColor = UIColor(red: 0.141, green: 0.141, blue: 0.141, alpha: 1).cgColor
+        contactButton.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+        
 
     }
     

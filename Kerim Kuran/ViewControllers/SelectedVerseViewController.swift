@@ -14,7 +14,7 @@ class SelectedVerseViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
-    let dataLoader = DataLoader()
+    let dataLoader = DataLoader() // no need? !!!
     var data = DataLoader().verseData
     var NSfilteredData = [NSAttributedString]()
     let fuse = Fuse()
