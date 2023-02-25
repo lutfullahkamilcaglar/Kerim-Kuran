@@ -131,12 +131,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gM8-Fg-Mdn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="150" y="29"/>
+            <point key="canvasLocation" x="71" y="62"/>
         </scene>
         <!--AboutViewController-->
         <scene sceneID="797-d8-S3w">
             <objects>
-                <viewController id="6Ul-Xq-Osf" userLabel="AboutViewController" sceneMemberID="viewController">
+                <viewController id="6Ul-Xq-Osf" userLabel="AboutViewController" customClass="AboutViewController" customModule="Kerim_Kuran" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3hA-bB-8QY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,7 +144,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2Z-KA-afA">
                                 <rect key="frame" x="20" y="123" width="353" height="229"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="birrPlatformImage" translatesAutoresizingMaskIntoConstraints="NO" id="UCW-kx-T0j">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="birplatform1" translatesAutoresizingMaskIntoConstraints="NO" id="UCW-kx-T0j">
                                         <rect key="frame" x="56" y="25" width="241" height="180"/>
                                     </imageView>
                                 </subviews>
@@ -156,6 +156,20 @@
                                     <constraint firstAttribute="bottom" secondItem="UCW-kx-T0j" secondAttribute="bottom" constant="24" id="dA0-Zj-yGs"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbX-cF-N5m">
+                                <rect key="frame" x="20" y="396" width="290" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XU-ge-NlS">
+                                <rect key="frame" x="20" y="444" width="350" height="391"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JQO-Hf-z9G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -167,26 +181,56 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Dm-IT-qVq"/>
+                    <connections>
+                        <outlet property="birPlatfomLabel" destination="5XU-ge-NlS" id="4Hv-9e-nA9"/>
+                        <outlet property="birPlatformImage" destination="M2Z-KA-afA" id="bjL-vL-wEl"/>
+                        <outlet property="topLabel" destination="sbX-cF-N5m" id="piq-Bb-s6e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngi-T8-9Oc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2040" y="29"/>
+            <point key="canvasLocation" x="1966" y="62"/>
         </scene>
         <!--PrefaceViewController-->
         <scene sceneID="ujc-6U-yRA">
             <objects>
-                <viewController id="ccc-RA-AKn" userLabel="PrefaceViewController" sceneMemberID="viewController">
+                <viewController id="ccc-RA-AKn" userLabel="PrefaceViewController" customClass="PrefaceViewController" customModule="Kerim_Kuran" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pAx-Nn-PaJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="prefaceSvg" translatesAutoresizingMaskIntoConstraints="NO" id="EPU-f4-0hE">
+                                <rect key="frame" x="20" y="106" width="351" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1B-Hq-UYG">
+                                <rect key="frame" x="21" y="396" width="173" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sm8-3X-VBd">
+                                <rect key="frame" x="21" y="444" width="350" height="391"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="F5d-dO-EID"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Md5-An-mO2"/>
+                    <connections>
+                        <outlet property="bottomLabel" destination="sm8-3X-VBd" id="FDj-nY-fjB"/>
+                        <outlet property="prefaceImage" destination="EPU-f4-0hE" id="F5h-ou-QJb"/>
+                        <outlet property="topLabel" destination="A1B-Hq-UYG" id="IHa-md-etX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6K-sc-EXa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="29"/>
+            <point key="canvasLocation" x="1044" y="62"/>
         </scene>
         <!--ContactViewController-->
         <scene sceneID="3lu-cj-7qj">
@@ -304,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVc-Fz-8iX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3052.6717557251909" y="28.87323943661972"/>
+            <point key="canvasLocation" x="2865" y="62"/>
         </scene>
         <!--VerseInfoViewController-->
         <scene sceneID="yba-Hl-fG9">
@@ -388,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZwS-uY-32z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-892.36641221374043" y="28.87323943661972"/>
+            <point key="canvasLocation" x="-892" y="62"/>
         </scene>
         <!--Title-->
         <scene sceneID="AnS-IG-Jgu">
@@ -399,7 +443,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-02-29a">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" name="verseViewBackground"/>
                                 <color key="separatorColor" name="verseViewBackground"/>
                                 <prototypes>
@@ -466,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwn-8n-93g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2761" y="-1283"/>
+            <point key="canvasLocation" x="-1923" y="62"/>
         </scene>
         <!--VerseViewController-->
         <scene sceneID="EEo-VR-KD5">
@@ -499,17 +543,14 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGf-JB-SNC">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGf-JB-SNC">
                                                                     <rect key="frame" x="0.0" y="31.666666666666661" width="313" height="36.333333333333343"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Ayet aciklama datasi gelecek" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZi-00-4BP">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZi-00-4BP">
                                                                     <rect key="frame" x="0.0" y="78" width="313" height="18"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="18" id="9vu-Wf-iaH"/>
-                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -584,15 +625,34 @@
             </objects>
             <point key="canvasLocation" x="1044" y="-1987"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g2X-V1-up2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2aU-NF-jpQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="64C-sw-21b">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OQC-Y1-GXx" kind="relationship" relationship="rootViewController" id="DXB-7F-vjb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E5N-Z1-vmQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2952" y="62"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="birrPlatformImage" width="238" height="201"/>
+        <image name="birplatform1" width="238" height="201"/>
         <image name="bookmarkIcon" width="18" height="24"/>
         <image name="contactDotImagesvg" width="54" height="8"/>
         <image name="eighthButton" width="35" height="35"/>
         <image name="fifthButton" width="35" height="35"/>
         <image name="firstButton" width="35" height="35"/>
         <image name="fourthButton" width="35" height="35"/>
+        <image name="prefaceSvg" width="351" height="250"/>
         <image name="secondButton" width="35" height="35"/>
         <image name="sixthseventhButton" width="35" height="35"/>
         <image name="thirdbutton" width="35" height="35"/>

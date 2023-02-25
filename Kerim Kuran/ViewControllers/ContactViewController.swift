@@ -18,8 +18,6 @@ class ContactViewController: UIViewController {
     @IBOutlet weak var seventhButton: UIButton!
     @IBOutlet weak var eighthButton : UIButton!
     
-
-    
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -27,6 +25,7 @@ class ContactViewController: UIViewController {
         super.viewDidLoad()
 
         firstButton.layer.cornerRadius = 15
+        secondButton.layer.cornerRadius = 15
         self.title = "İletişim"
         
         

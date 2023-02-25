@@ -141,6 +141,7 @@ class MainViewController: UIViewController {
         continueButtonLabel.lineBreakMode = .byWordWrapping
         continueButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
         continueButtonLabel.text = "Okumaya Devam et"
+        contactButtonLabel.textColor = .black
         continueButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         continueButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         continueButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
@@ -175,6 +176,7 @@ class MainViewController: UIViewController {
         prefaceButtonLabel.lineBreakMode = .byWordWrapping
         prefaceButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
         prefaceButtonLabel.text = "Önsöz"
+        prefaceButtonLabel.textColor = .black
         prefaceButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         prefaceButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         prefaceButtonLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
@@ -210,6 +212,7 @@ class MainViewController: UIViewController {
         aboutButtonLabel.lineBreakMode = .byWordWrapping
         aboutButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
         aboutButtonLabel.text = "BİRR Platformu"
+        aboutButtonLabel.textColor = .black
         aboutButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         aboutButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         aboutButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true

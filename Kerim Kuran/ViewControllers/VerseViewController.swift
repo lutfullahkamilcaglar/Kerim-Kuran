@@ -9,9 +9,7 @@ import UIKit
 
 class VerseViewController: UIViewController, UITableViewDelegate {
 
-    @IBOutlet weak var sureIdLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var sureNameLabel: UILabel!
     
     var selectedVerseId: Int = 0
     var verses = DataLoader().verseData
@@ -51,6 +49,7 @@ extension VerseViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! VerseViewCell
         cell.verseLabel.text = verse.ayetValue
         cell.verseIdLabel.text = verse.id
+        cell.verseInfoLabel.text = verse.note
         return cell
     }
 }

@@ -13,6 +13,7 @@
 		F50D63DB2989435400A86658 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50D63DA2989435400A86658 /* Verse.swift */; };
 		F50D63DD29894C9500A86658 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50D63DC29894C9400A86658 /* DataLoader.swift */; };
 		F53D380229AA61F6001FAA77 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D380129AA61F6001FAA77 /* AboutViewController.swift */; };
+		F53D380429AA6260001FAA77 /* PrefaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D380329AA6260001FAA77 /* PrefaceViewController.swift */; };
 		F542954D298DC46D0073BD52 /* VerseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542954C298DC46D0073BD52 /* VerseViewController.swift */; };
 		F542954F298DC5A70073BD52 /* VerseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542954E298DC5A70073BD52 /* VerseViewCell.swift */; };
 		F5429551298DDD730073BD52 /* VerseData.json in Resources */ = {isa = PBXBuildFile; fileRef = F5429550298DDD730073BD52 /* VerseData.json */; };
@@ -58,6 +59,7 @@
 		F50D63DA2989435400A86658 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
 		F50D63DC29894C9400A86658 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		F53D380129AA61F6001FAA77 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		F53D380329AA6260001FAA77 /* PrefaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefaceViewController.swift; sourceTree = "<group>"; };
 		F542954C298DC46D0073BD52 /* VerseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewController.swift; sourceTree = "<group>"; };
 		F542954E298DC5A70073BD52 /* VerseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewCell.swift; sourceTree = "<group>"; };
 		F5429550298DDD730073BD52 /* VerseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VerseData.json; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				F50D63D6298933D700A86658 /* SelectedVerseViewController.swift */,
 				F5C85FB829A6CE3A0002F28C /* ContactViewController.swift */,
 				F53D380129AA61F6001FAA77 /* AboutViewController.swift */,
+				F53D380329AA6260001FAA77 /* PrefaceViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				F50D63DD29894C9500A86658 /* DataLoader.swift in Sources */,
 				F5B741582987DD5900676827 /* Constants.swift in Sources */,
 				F50D63D7298933D700A86658 /* SelectedVerseViewController.swift in Sources */,
+				F53D380429AA6260001FAA77 /* PrefaceViewController.swift in Sources */,
 				F542954D298DC46D0073BD52 /* VerseViewController.swift in Sources */,
 				F54C5EC1298DB4C9009AA036 /* VerseInfo.swift in Sources */,
 				F5B74160298809E800676827 /* VerseInfoCell.swift in Sources */,

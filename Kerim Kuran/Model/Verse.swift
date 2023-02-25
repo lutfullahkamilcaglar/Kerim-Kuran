@@ -12,6 +12,9 @@ struct Verse: Codable {
     var id: String
     var sureId: Int
     var ayetId: Int
+    var note: String?
     var ayetValue: String
+    //var noteNo: Int
+    
 }
 

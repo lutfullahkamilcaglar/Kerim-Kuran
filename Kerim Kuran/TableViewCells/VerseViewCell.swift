@@ -22,6 +22,7 @@ class VerseViewCell: UITableViewCell {
         verseView.layer.borderWidth = 1
         verseView.layer.borderColor = UIColor(red: 0.141, green: 0.141, blue: 0.141, alpha: 1).cgColor
 
+        verseInfoLabel.numberOfLines = 0
 
     }
     
