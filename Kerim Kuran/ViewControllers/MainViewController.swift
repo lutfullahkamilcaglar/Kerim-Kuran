@@ -6,16 +6,8 @@
 //
 
 import UIKit
-import Fuse
 
 class MainViewController: UIViewController {
-    
-    var infoData = DataLoader().verseInfoData
-    let searchController = UISearchController(searchResultsController: nil)
-    var data = DataLoader().verseData
-    var NSfilteredData = [NSAttributedString]()
-    let fuse = Fuse()
-    
     
     @IBOutlet weak var allVerseButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
@@ -40,53 +32,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Ana Sayfa", style: .plain, target: nil, action: nil)
         
-        // Setup the Search Controller
-        navigationItem.searchController = searchController
-        searchController.loadViewIfNeeded()
-        searchController.searchResultsUpdater = self
-        navigationItem.hidesSearchBarWhenScrolling = false
-        
         VerseButtonView()
         continueButtonView()
         prefaceButtonView()
         aboutButtonView()
         contactButtonView()
     }
-    
-    // MARK: - Search Text Arrangement
-    
-//    func filterContentForSearchText(_ searchText: String) {
-//        DispatchQueue.global().async {
-//            let boldAttrs = [
-//                NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17),
-//                NSAttributedString.Key.foregroundColor: UIColor.darkText
-//            ]
-//            let ayetValue = self.data.map { $0.ayetValue }
-//            let results = self.fuse.search(searchText, in: ayetValue)
-//
-//            var filteredData = [NSMutableAttributedString]()
-//            for (index, _, matchedRanges) in results {
-//                let value = self.data[index]
-//                let verse = value.ayetValue
-//                let attributedString = NSMutableAttributedString(string: verse)
-//                if !matchedRanges.isEmpty {
-//                    let nsRanges = matchedRanges.map(Range.init).map(NSRange.init)
-//                    for nsRange in nsRanges {
-//                        attributedString.addAttributes(boldAttrs, range: nsRange)
-//                    }
-//                }
-//                filteredData.append(attributedString)
-//            }
-//            // This dispatch queue added for after reloading the
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
-//            DispatchQueue.main.async {
-//                self.NSfilteredData = filteredData
-//                self.tableView.reloadData()
-//            }
-//        }
-//    }
     
 
     func VerseButtonView() {
@@ -107,7 +58,7 @@ class MainViewController: UIViewController {
         verseButtonLabel.lineBreakMode = .byWordWrapping
         verseButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
         verseButtonLabel.text = "Tüm Sureleri gör"
-        verseButtonLabel.textColor = .black
+        //verseButtonLabel.textColor = .black
         verseButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         verseButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         verseButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
@@ -141,7 +92,7 @@ class MainViewController: UIViewController {
         continueButtonLabel.lineBreakMode = .byWordWrapping
         continueButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
         continueButtonLabel.text = "Okumaya Devam et"
-        contactButtonLabel.textColor = .black
+        //continueButtonLabel.textColor = .black
         continueButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         continueButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         continueButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
@@ -176,7 +127,7 @@ class MainViewController: UIViewController {
         prefaceButtonLabel.lineBreakMode = .byWordWrapping
         prefaceButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
         prefaceButtonLabel.text = "Önsöz"
-        prefaceButtonLabel.textColor = .black
+        //prefaceButtonLabel.textColor = .black
         prefaceButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         prefaceButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         prefaceButtonLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
@@ -212,7 +163,7 @@ class MainViewController: UIViewController {
         aboutButtonLabel.lineBreakMode = .byWordWrapping
         aboutButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
         aboutButtonLabel.text = "BİRR Platformu"
-        aboutButtonLabel.textColor = .black
+        //aboutButtonLabel.textColor = .black
         aboutButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         aboutButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         aboutButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
@@ -264,22 +215,6 @@ class MainViewController: UIViewController {
 }
 
 
-// MARK: - UISearchBar Delegate
-extension MainViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-       // filterContentForSearchText(searchBar.text!)
-        
-    }
-}
-
-// MARK: - UISearchResultsUpdating Delegate
-
-extension MainViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-      //  filterContentForSearchText(searchController.searchBar.text!)
-        
-    }
-}
 
 
 

@@ -23,6 +23,7 @@ class VerseInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Setup the TableView
         tableView.delegate = self
         tableView.dataSource = self
@@ -162,10 +163,10 @@ extension VerseInfoViewController: UITableViewDataSource, UITableViewDelegate {
         let isSearchActive = searchController.isActive && searchController.searchBar.text != ""
         
         if isSearchActive {
-            verseInfoData = self.filteredVerseInfoData[indexPath.row]
+            verseInfoData = filteredVerseInfoData[indexPath.row]
             headerText = NSfilteredData[indexPath.row]
         } else{
-            verseInfoData = self.infoData[indexPath.row]
+            verseInfoData = infoData[indexPath.row]
             headerText = NSAttributedString(string: String(verseInfoData.verseId) + " - " + verseInfoData.verseName)
         }
         
