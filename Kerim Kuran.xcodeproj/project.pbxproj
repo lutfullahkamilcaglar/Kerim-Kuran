@@ -17,6 +17,8 @@
 		F542954D298DC46D0073BD52 /* VerseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542954C298DC46D0073BD52 /* VerseViewController.swift */; };
 		F542954F298DC5A70073BD52 /* VerseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542954E298DC5A70073BD52 /* VerseViewCell.swift */; };
 		F5429551298DDD730073BD52 /* VerseData.json in Resources */ = {isa = PBXBuildFile; fileRef = F5429550298DDD730073BD52 /* VerseData.json */; };
+		F549232E29B11D6900530E70 /* ContinueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F549232D29B11D6900530E70 /* ContinueViewController.swift */; };
+		F549233029B11E9400530E70 /* ContinueViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F549232F29B11E9400530E70 /* ContinueViewCell.swift */; };
 		F54C5EC1298DB4C9009AA036 /* VerseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54C5EC0298DB4C9009AA036 /* VerseInfo.swift */; };
 		F56CC8662987C87A003FAC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CC8652987C87A003FAC1B /* AppDelegate.swift */; };
 		F56CC8682987C87A003FAC1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CC8672987C87A003FAC1B /* SceneDelegate.swift */; };
@@ -44,6 +46,8 @@
 		F542954C298DC46D0073BD52 /* VerseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewController.swift; sourceTree = "<group>"; };
 		F542954E298DC5A70073BD52 /* VerseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewCell.swift; sourceTree = "<group>"; };
 		F5429550298DDD730073BD52 /* VerseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VerseData.json; sourceTree = "<group>"; };
+		F549232D29B11D6900530E70 /* ContinueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueViewController.swift; sourceTree = "<group>"; };
+		F549232F29B11E9400530E70 /* ContinueViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueViewCell.swift; sourceTree = "<group>"; };
 		F54C5EC0298DB4C9009AA036 /* VerseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseInfo.swift; sourceTree = "<group>"; };
 		F56CC8622987C87A003FAC1B /* Kerim Kuran.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kerim Kuran.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56CC8652987C87A003FAC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				F50D63D8298933F900A86658 /* SelectedVerseCell.swift */,
 				F542954E298DC5A70073BD52 /* VerseViewCell.swift */,
 				F5B7415F298809E800676827 /* VerseInfoCell.swift */,
+				F549232F29B11E9400530E70 /* ContinueViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				F56CC8692987C87A003FAC1B /* MainViewController.swift */,
 				F542954C298DC46D0073BD52 /* VerseViewController.swift */,
 				F56CC87E2987CD98003FAC1B /* VerseInfoViewController.swift */,
+				F549232D29B11D6900530E70 /* ContinueViewController.swift */,
 				F50D63D6298933D700A86658 /* SelectedVerseViewController.swift */,
 				F5C85FB829A6CE3A0002F28C /* ContactViewController.swift */,
 				F53D380129AA61F6001FAA77 /* AboutViewController.swift */,
@@ -304,7 +310,9 @@
 				F50D63DD29894C9500A86658 /* DataLoader.swift in Sources */,
 				F5B741582987DD5900676827 /* Constants.swift in Sources */,
 				F50D63D7298933D700A86658 /* SelectedVerseViewController.swift in Sources */,
+				F549232E29B11D6900530E70 /* ContinueViewController.swift in Sources */,
 				F53D380429AA6260001FAA77 /* PrefaceViewController.swift in Sources */,
+				F549233029B11E9400530E70 /* ContinueViewCell.swift in Sources */,
 				F542954D298DC46D0073BD52 /* VerseViewController.swift in Sources */,
 				F54C5EC1298DB4C9009AA036 /* VerseInfo.swift in Sources */,
 				F5B74160298809E800676827 /* VerseInfoCell.swift in Sources */,

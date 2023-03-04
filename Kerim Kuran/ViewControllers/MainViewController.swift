@@ -15,6 +15,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var aboutButton   : UIButton!
     @IBOutlet weak var contactButton : UIButton!
     
+    @IBOutlet weak var buttonView: UIView!
+    
     //Buttons image setups
     let verseButtonImage    = UIImageView(image: UIImage(named: "showVerseIcon"))
     let continueButtonImage = UIImageView(image: UIImage(named: "continueIcon"))
@@ -28,26 +30,118 @@ class MainViewController: UIViewController {
     let aboutButtonLabel     = UILabel()
     let contactButtonLabel   = UILabel()
     
+    // create controls
+    let leadingGuide = UILayoutGuide()
+    let middleGuide = UILayoutGuide()
+    let trailingGuide = UILayoutGuide()
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Ana Sayfa", style: .plain, target: nil, action: nil)
+ 
         
+        setupViews()
+    }
+    
+    func buttonViewSetup() {
+        
+        view.addSubview(buttonView)
+        buttonView.translatesAutoresizingMaskIntoConstraints = false
+        buttonView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        buttonView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+ 
+        buttonView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        buttonView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        
+        buttonView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 176).isActive = true
+        buttonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        
+        
+    }
+
+    func setupViews() {
+        view.addLayoutGuide(leadingGuide)
+        view.addLayoutGuide(middleGuide)
+        view.addLayoutGuide(trailingGuide)
+        let margins = view.layoutMarginsGuide
+        
+        buttonViewSetup()
         VerseButtonView()
         continueButtonView()
         prefaceButtonView()
         aboutButtonView()
         contactButtonView()
+         
+        // usttekiler
+        
+        //leading guide
+        margins.leadingAnchor.constraint(equalTo: leadingGuide.leadingAnchor).isActive = true
+        leadingGuide.trailingAnchor.constraint(equalTo: allVerseButton.leadingAnchor).isActive = true
+        
+        //middleGuide
+        allVerseButton.trailingAnchor.constraint(equalTo: middleGuide.leadingAnchor).isActive = true
+        middleGuide.trailingAnchor.constraint(equalTo: continueButton.leadingAnchor).isActive = true
+        
+        //trailing guide
+        continueButton.trailingAnchor.constraint(equalTo: trailingGuide.leadingAnchor).isActive = true
+        trailingGuide.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+        
+        //button equal
+        allVerseButton.widthAnchor.constraint(equalTo: continueButton.widthAnchor).isActive = true
+        
+        //space equal widths
+        leadingGuide.widthAnchor.constraint(equalTo: middleGuide.widthAnchor).isActive = true
+        leadingGuide.widthAnchor.constraint(equalTo: trailingGuide.widthAnchor).isActive = true
+        
+        
+        // alltakiler
+        
+        //leading guide
+     //   margins.leadingAnchor.constraint(equalTo: leadingGuide.leadingAnchor).isActive = true
+        leadingGuide.trailingAnchor.constraint(equalTo: prefaceButton.leadingAnchor).isActive = true
+        
+        //middleGuide
+        prefaceButton.trailingAnchor.constraint(equalTo: middleGuide.leadingAnchor).isActive = true
+        middleGuide.trailingAnchor.constraint(equalTo: aboutButton.leadingAnchor).isActive = true
+        
+        //trailing guide
+        aboutButton.trailingAnchor.constraint(equalTo: trailingGuide.leadingAnchor).isActive = true
+        trailingGuide.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+        
+        //button equal
+        prefaceButton.widthAnchor.constraint(equalTo: aboutButton.widthAnchor).isActive = true
+        
+        //space equal widths
+        leadingGuide.widthAnchor.constraint(equalTo: middleGuide.widthAnchor).isActive = true
+        leadingGuide.widthAnchor.constraint(equalTo: trailingGuide.widthAnchor).isActive = true
+        
+        
+        leadingGuide.trailingAnchor.constraint(equalTo: contactButton.leadingAnchor).isActive = true
+        contactButton.trailingAnchor.constraint(equalTo: trailingGuide.leadingAnchor).isActive = true
+        trailingGuide.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+        
+        
     }
-    
-
     func VerseButtonView() {
-        //button image setup
+        
+        
+        view.addSubview(allVerseButton)
         allVerseButton.layer.cornerRadius = 15
+        allVerseButton.translatesAutoresizingMaskIntoConstraints = false
+        allVerseButton.widthAnchor.constraint(equalToConstant: 165).isActive = true
+        allVerseButton.heightAnchor.constraint(equalToConstant: 165).isActive = true
+        allVerseButton.topAnchor.constraint(equalTo: buttonView.topAnchor, constant: 0).isActive = true
+       
+        //button image setup
+        
         allVerseButton.addSubview(verseButtonImage)
         verseButtonImage.frame = CGRect(x: 0, y: 0, width: 46, height: 46)
         verseButtonImage.translatesAutoresizingMaskIntoConstraints = false
         verseButtonImage.widthAnchor.constraint(equalToConstant: 46).isActive = true
         verseButtonImage.heightAnchor.constraint(equalToConstant: 46).isActive = true
+        
         verseButtonImage.leadingAnchor.constraint(equalTo: allVerseButton.leadingAnchor, constant: 22).isActive = true
         verseButtonImage.topAnchor.constraint(equalTo: allVerseButton.topAnchor, constant: 22).isActive = true
     
@@ -58,7 +152,6 @@ class MainViewController: UIViewController {
         verseButtonLabel.lineBreakMode = .byWordWrapping
         verseButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
         verseButtonLabel.text = "Tüm Sureleri gör"
-        //verseButtonLabel.textColor = .black
         verseButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         verseButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         verseButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
@@ -73,26 +166,32 @@ class MainViewController: UIViewController {
     }
     
     func continueButtonView() {
-        //button image setup
+        
+        view.addSubview(continueButton)
+        
         continueButton.layer.cornerRadius = 15
+        continueButton.translatesAutoresizingMaskIntoConstraints = false
+        continueButton.widthAnchor.constraint(equalToConstant: 165).isActive = true
+        continueButton.heightAnchor.constraint(equalToConstant: 165).isActive = true
+        continueButton.topAnchor.constraint(equalTo: buttonView.topAnchor, constant: 0).isActive = true
+       
+        //button image setup
+        
         continueButton.addSubview(continueButtonImage)
-        //continueButtonImage.frame = CGRect(x: 0, y: 0, width: 46, height: 46)
         continueButtonImage.translatesAutoresizingMaskIntoConstraints = false
         continueButtonImage.widthAnchor.constraint(equalToConstant: 46).isActive = true
         continueButtonImage.heightAnchor.constraint(equalToConstant: 46).isActive = true
         continueButtonImage.leadingAnchor.constraint(equalTo: continueButton.leadingAnchor, constant: 22).isActive = true
         continueButtonImage.topAnchor.constraint(equalTo: continueButton.topAnchor, constant: 22).isActive = true
         continueButtonImage.backgroundColor = .white
-
+    
         
         //button label setup
         continueButton.addSubview(continueButtonLabel)
-        //continueButtonLabel.frame = CGRect(x: 0, y: 0, width: 121, height: 56)
         continueButtonLabel.numberOfLines = 0
         continueButtonLabel.lineBreakMode = .byWordWrapping
         continueButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
         continueButtonLabel.text = "Okumaya Devam et"
-        //continueButtonLabel.textColor = .black
         continueButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         continueButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         continueButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
@@ -108,8 +207,18 @@ class MainViewController: UIViewController {
     }
     
     func prefaceButtonView() {
-        //button image setup
+        
+        view.addSubview(prefaceButton)
         prefaceButton.layer.cornerRadius = 15
+        prefaceButton.translatesAutoresizingMaskIntoConstraints = false
+        prefaceButton.widthAnchor.constraint(equalToConstant: 165).isActive = true
+        prefaceButton.heightAnchor.constraint(equalToConstant: 165).isActive = true
+//        prefaceButton.leadingAnchor.constraint(equalTo: buttonView.leadingAnchor, constant: 0).isActive = true
+        prefaceButton.topAnchor.constraint(equalTo: buttonView.topAnchor, constant: 185).isActive = true
+        
+        //button image setup
+        
+        
         prefaceButton.addSubview(prefaceButtonImage)
         prefaceButtonImage.frame = CGRect(x: 0, y: 0, width: 46, height: 46)
         prefaceButtonImage.translatesAutoresizingMaskIntoConstraints = false
@@ -127,7 +236,6 @@ class MainViewController: UIViewController {
         prefaceButtonLabel.lineBreakMode = .byWordWrapping
         prefaceButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
         prefaceButtonLabel.text = "Önsöz"
-        //prefaceButtonLabel.textColor = .black
         prefaceButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         prefaceButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         prefaceButtonLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
@@ -144,8 +252,19 @@ class MainViewController: UIViewController {
     }
     
     func aboutButtonView() {
-        //button image setup
+        
+        
+        view.addSubview(aboutButton)
         aboutButton.layer.cornerRadius = 15
+        aboutButton.translatesAutoresizingMaskIntoConstraints = false
+        aboutButton.widthAnchor.constraint(equalToConstant: 165).isActive = true
+        aboutButton.heightAnchor.constraint(equalToConstant: 165).isActive = true
+//        aboutButton.trailingAnchor.constraint(equalTo: buttonView.trailingAnchor, constant: 0).isActive = true
+        aboutButton.topAnchor.constraint(equalTo: buttonView.topAnchor, constant: 185).isActive = true
+
+        
+        //button image setup
+        
         aboutButton.addSubview(aboutButtonImage)
         aboutButtonImage.frame = CGRect(x: 0, y: 0, width: 46, height: 46)
         aboutButtonImage.translatesAutoresizingMaskIntoConstraints = false
@@ -154,7 +273,6 @@ class MainViewController: UIViewController {
         aboutButtonImage.leadingAnchor.constraint(equalTo: aboutButton.leadingAnchor, constant: 22).isActive = true
         aboutButtonImage.topAnchor.constraint(equalTo: aboutButton.topAnchor, constant: 22).isActive = true
         aboutButtonImage.backgroundColor = .white
-
         
         //button label setup
         aboutButton.addSubview(aboutButtonLabel)
@@ -163,7 +281,6 @@ class MainViewController: UIViewController {
         aboutButtonLabel.lineBreakMode = .byWordWrapping
         aboutButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
         aboutButtonLabel.text = "BİRR Platformu"
-        //aboutButtonLabel.textColor = .black
         aboutButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         aboutButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         aboutButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
@@ -184,11 +301,8 @@ class MainViewController: UIViewController {
         contactButton.translatesAutoresizingMaskIntoConstraints = false
         contactButton.widthAnchor.constraint(equalToConstant: 349).isActive = true
         contactButton.heightAnchor.constraint(equalToConstant: 46).isActive = true
-        contactButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        contactButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        contactButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 560).isActive = true
-        contactButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -70).isActive = true
         
+        contactButton.topAnchor.constraint(equalTo: buttonView.topAnchor, constant: 370).isActive = true
         
         //button label setup
         contactButton.addSubview(contactButtonLabel)
@@ -202,16 +316,8 @@ class MainViewController: UIViewController {
         contactButtonLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         contactButtonLabel.centerXAnchor.constraint(equalTo: contactButton.centerXAnchor).isActive = true
         contactButtonLabel.centerYAnchor.constraint(equalTo: contactButton.centerYAnchor).isActive = true
-
-        
-        //button view set
-        contactButton.layer.cornerRadius = 12
-        contactButton.layer.borderWidth = 1
-        contactButton.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-        
-
     }
-    
+
 }
 
 

@@ -33,11 +33,10 @@ class VerseViewController: UIViewController, UITableViewDelegate {
        
         
         selectedVerses = verses.filter { $0.sureId == selectedVerseId }
-        
         for verse in verseInfoData {
-            let name = verse.verseName
+            let verseName = verse.verseName
             if selectedVerseId == verse.verseId {
-                self.title = name
+                self.title = verseName
             }
         }
         
@@ -46,8 +45,10 @@ class VerseViewController: UIViewController, UITableViewDelegate {
         tableView.reloadData()
         
     }
+   
     
     // MARK: - Search Text Arrangement
+
     func filterContentForSearchText(_ searchText: String) {
             DispatchQueue.global().async {
                 let boldAttrs = [
@@ -58,8 +59,7 @@ class VerseViewController: UIViewController, UITableViewDelegate {
                 let verseId = self.verses.map { $0.id }
                 let ayetValue = self.verses.map { $0.ayetValue }
                 let verseNote = self.verses.map { $0.note }
-                //let data = verseId + ayetValue + verseNote
-                // arama icin hepsini ayir tek tek aratip tek tek label lara display et
+                
                 var combinedVerses = [String]()
                 for (index, id) in verseId.enumerated() {
                     let combinedVerse = "\(id) - \(ayetValue[index]) - \(verseNote[index] ?? "")"
@@ -67,15 +67,13 @@ class VerseViewController: UIViewController, UITableViewDelegate {
                 }
                 
                 let results = self.fuse.search(searchText, in: combinedVerses)
-                let myResult =  self.fuse.search(searchText, in: combinedVerses)
                 var filteredData = [NSMutableAttributedString]()
                 var filteredVerseData = [Verse]()
-                let newFilter = results + myResult
                 
-                for (index, _, matchedRanges) in newFilter {
+                for (index, _, matchedRanges) in results {
                     
-                    let verseData =
-                    self.verses[index]
+                    let verseData = self.verses[index]
+                    print(verseData)
                     
                     let attributedString = NSMutableAttributedString(string: combinedVerses[index])
                     if !matchedRanges.isEmpty {
@@ -123,9 +121,8 @@ extension VerseViewController: UITableViewDataSource {
         let isSearchActive = searchController.isActive && searchController.searchBar.text != ""
         
         if isSearchActive  {
-            labelVerseData = self.filteredVerseData[indexPath.row] // bum
+            //labelVerseData = self.filteredVerseData[indexPath.row] //bum
             verseLabelData = NSfilteredData[indexPath.row]
-            
         } else {
             labelVerseData = self.selectedVerses[indexPath.row]
             verseLabelData = NSAttributedString(string: labelVerseData.ayetValue)
@@ -133,7 +130,7 @@ extension VerseViewController: UITableViewDataSource {
         
        // cell.verseIdLabel.text = labelVerseData.id
         cell.verseLabel.attributedText = verseLabelData
-      //  cell.verseInfoLabel.text = labelVerseData.note
+       // cell.verseInfoLabel.text = labelVerseData.note
         
         // Add a long press gesture recogniser to the cell
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(copyVerse(_:)))
