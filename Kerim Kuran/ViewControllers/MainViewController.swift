@@ -133,7 +133,7 @@ class MainViewController: UIViewController {
         allVerseButton.widthAnchor.constraint(equalToConstant: 165).isActive = true
         allVerseButton.heightAnchor.constraint(equalToConstant: 165).isActive = true
         allVerseButton.topAnchor.constraint(equalTo: buttonView.topAnchor, constant: 0).isActive = true
-       
+        
         //button image setup
         
         allVerseButton.addSubview(verseButtonImage)

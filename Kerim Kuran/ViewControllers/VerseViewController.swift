@@ -13,13 +13,13 @@ class VerseViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     var selectedVerseId: Int = 0
-    var NSfilteredData = [NSAttributedString]()
+    var filteredDataNS = [NSAttributedString]()
     let fuse = Fuse()
     let searchController = UISearchController(searchResultsController: nil)
     var verses = DataLoader().verseData
+    var verseInfoData = DataLoader().verseInfoData
     var selectedVerses: [Verse] = []
     var filteredVerseData = [Verse]()
-    var verseInfoData = DataLoader().verseInfoData
     
 
     override func viewDidLoad() {
@@ -33,6 +33,7 @@ class VerseViewController: UIViewController, UITableViewDelegate {
        
         
         selectedVerses = verses.filter { $0.sureId == selectedVerseId }
+        
         for verse in verseInfoData {
             let verseName = verse.verseName
             if selectedVerseId == verse.verseId {
@@ -66,16 +67,17 @@ class VerseViewController: UIViewController, UITableViewDelegate {
                     combinedVerses.append(combinedVerse)
                 }
                 
-                let results = self.fuse.search(searchText, in: combinedVerses)
+                let results = self.fuse.search(searchText, in: ayetValue)
+                
+                
                 var filteredData = [NSMutableAttributedString]()
                 var filteredVerseData = [Verse]()
-                
-                for (index, _, matchedRanges) in results {
+        
+                for (index, _, matchedRanges) in results.prefix(100) {
                     
                     let verseData = self.verses[index]
-                    print(verseData)
                     
-                    let attributedString = NSMutableAttributedString(string: combinedVerses[index])
+                    let attributedString = NSMutableAttributedString(string: ayetValue[index])
                     if !matchedRanges.isEmpty {
                         let nsRanges = matchedRanges.map(Range.init).map(NSRange.init)
                         for nsRange in nsRanges {
@@ -86,12 +88,8 @@ class VerseViewController: UIViewController, UITableViewDelegate {
                     filteredVerseData.append(verseData)
                 }
                 
-                // This dispatch queue added for after reloading the
                 DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                DispatchQueue.main.async {
-                    self.NSfilteredData = filteredData
+                    self.filteredDataNS = filteredData
                     self.filteredVerseData = filteredVerseData
                     self.tableView.reloadData()
                 }
@@ -104,9 +102,9 @@ class VerseViewController: UIViewController, UITableViewDelegate {
 extension VerseViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.isActive && searchController.searchBar.text != "" {
-            return NSfilteredData.count
-        }else{
+        if searchController.isActive && searchController.searchBar.text != "" && !filteredVerseData.isEmpty {
+            return filteredDataNS.count
+        } else{
             return selectedVerses.count
         }
     }
@@ -118,27 +116,25 @@ extension VerseViewController: UITableViewDataSource {
         let labelVerseData: Verse
         let verseLabelData: NSAttributedString
         
-        let isSearchActive = searchController.isActive && searchController.searchBar.text != ""
+        let isSearchActive = searchController.isActive && searchController.searchBar.text != "" && !filteredVerseData.isEmpty
         
-        if isSearchActive  {
-            //labelVerseData = self.filteredVerseData[indexPath.row] //bum
-            verseLabelData = NSfilteredData[indexPath.row]
+        if isSearchActive {
+            labelVerseData = self.filteredVerseData[indexPath.row] //
+            verseLabelData = filteredDataNS[indexPath.row]
         } else {
             labelVerseData = self.selectedVerses[indexPath.row]
             verseLabelData = NSAttributedString(string: labelVerseData.ayetValue)
         }
         
-       // cell.verseIdLabel.text = labelVerseData.id
+        cell.verseIdLabel.text = labelVerseData.id
         cell.verseLabel.attributedText = verseLabelData
-       // cell.verseInfoLabel.text = labelVerseData.note
+        cell.verseInfoLabel.text = labelVerseData.note
         
         // Add a long press gesture recogniser to the cell
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(copyVerse(_:)))
         cell.addGestureRecognizer(longPressRecognizer)
         
         return cell
-        
-
     }
     
     @objc func copyVerse(_ gestureRecognizer: UILongPressGestureRecognizer) {

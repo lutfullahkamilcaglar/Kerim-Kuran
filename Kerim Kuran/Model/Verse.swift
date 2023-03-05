@@ -14,6 +14,5 @@ struct Verse: Codable {
     var ayetId: Int
     var note: String?
     var ayetValue: String
-    
 }
 

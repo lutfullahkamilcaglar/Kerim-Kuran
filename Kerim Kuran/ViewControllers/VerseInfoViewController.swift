@@ -79,9 +79,9 @@ class VerseInfoViewController: UIViewController {
             }
 
             // This dispatch queue added for after reloading the
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
             DispatchQueue.main.async {
                 self.NSfilteredData = filteredData
                 self.filteredVerseInfoData = filteredVerseInfoData
