@@ -58,7 +58,6 @@ class MainViewController: UIViewController {
         buttonView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 176).isActive = true
         buttonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         
-        
     }
 
     func setupViews() {
@@ -99,7 +98,7 @@ class MainViewController: UIViewController {
         // alltakiler
         
         //leading guide
-     //   margins.leadingAnchor.constraint(equalTo: leadingGuide.leadingAnchor).isActive = true
+     //margins.leadingAnchor.constraint(equalTo: leadingGuide.leadingAnchor).isActive = true
         leadingGuide.trailingAnchor.constraint(equalTo: prefaceButton.leadingAnchor).isActive = true
         
         //middleGuide
@@ -259,7 +258,7 @@ class MainViewController: UIViewController {
         aboutButton.translatesAutoresizingMaskIntoConstraints = false
         aboutButton.widthAnchor.constraint(equalToConstant: 165).isActive = true
         aboutButton.heightAnchor.constraint(equalToConstant: 165).isActive = true
-//        aboutButton.trailingAnchor.constraint(equalTo: buttonView.trailingAnchor, constant: 0).isActive = true
+//      aboutButton.trailingAnchor.constraint(equalTo: buttonView.trailingAnchor, constant: 0).isActive = true
         aboutButton.topAnchor.constraint(equalTo: buttonView.topAnchor, constant: 185).isActive = true
 
         
@@ -301,7 +300,6 @@ class MainViewController: UIViewController {
         contactButton.translatesAutoresizingMaskIntoConstraints = false
         contactButton.widthAnchor.constraint(equalToConstant: 349).isActive = true
         contactButton.heightAnchor.constraint(equalToConstant: 46).isActive = true
-        
         contactButton.topAnchor.constraint(equalTo: buttonView.topAnchor, constant: 370).isActive = true
         
         //button label setup

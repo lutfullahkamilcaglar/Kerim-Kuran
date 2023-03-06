@@ -78,7 +78,7 @@ class AboutViewController: UIViewController,UIScrollViewDelegate {
 
         let platformAmaciText1 = K.platformAmaciText1
         let platformAmaciText1Attributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 18)]
-        let platformAmaciString1 = NSAttributedString(string: "\n\(platformAmaciText1)", attributes:platformAmaciText1Attributes)
+        let platformAmaciString1 = NSAttributedString(string: "\n\n\(platformAmaciText1)", attributes:platformAmaciText1Attributes)
 
         attributedString.append(platformAmaciString)
         attributedString.append(platformAmaciString1)
@@ -90,7 +90,7 @@ class AboutViewController: UIViewController,UIScrollViewDelegate {
 
         let temelIlkelerimizText1 = K.temelIlkelerimizText1
         let temelIlkelerimizText1Attributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 18)]
-        let temelIlkelerimizString1 = NSAttributedString(string: "\(temelIlkelerimizText1)", attributes:temelIlkelerimizText1Attributes)
+        let temelIlkelerimizString1 = NSAttributedString(string: "\n\(temelIlkelerimizText1)", attributes:temelIlkelerimizText1Attributes)
 
         attributedString.append(temelIlkelerimizString)
         attributedString.append(temelIlkelerimizString1)

@@ -19,67 +19,17 @@ class ContactViewController: UIViewController,MFMailComposeViewControllerDelegat
     @IBOutlet weak var seventhButton: UIButton!
     @IBOutlet weak var eighthButton : UIButton!
     
-    // Button image setups
-    let firstButtonImage   = UIImageView(image: UIImage(named: "firstButton"))
-    let secondButtonImage  = UIImageView(image: UIImage(named: "secondButton"))
-    let thirdButtonImage   = UIImageView(image: UIImage(named: "thirdButton"))
-    let fourthButtonImage  = UIImageView(image: UIImage(named: "fourthButton"))
-    let fifthButtonImage   = UIImageView(image: UIImage(named: "fifthButton"))
-    let sixthButtonImage   = UIImageView(image: UIImage(named: "sixthButton"))
-    let seventhButtonImage = UIImageView(image: UIImage(named: "seventhButton"))
-    let eighthButtonImage  = UIImageView(image: UIImage(named: "eighthButton"))
     
-    //Button label setups
-    let firstButtonLabel   = UILabel()
-    let secondButtonLabel  = UILabel()
-    let thirdButtonLabel   = UILabel()
-    let fourthButtonLabel  = UILabel()
-    let fifthButtonLabel   = UILabel()
-    let sixthButtonLabel   = UILabel()
-    let seventhButtonLabel = UILabel()
-    let eighthButtonLabel  = UILabel()
-    
-    
-    let searchController = UISearchController(searchResultsController: nil)
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        firstButton.layer.cornerRadius = 15
-        secondButton.layer.cornerRadius = 15
+        
         self.title = "İletişim"
         
-        // Button ui callers
-        firstButtonUI()
-        
+       
     }
-    
-    // buttons setups
-    
-    func firstButtonUI() {
-        
-        var parent = self.view!
-        parent.addSubview(firstButton)
-        firstButton.translatesAutoresizingMaskIntoConstraints = false
-        firstButton.widthAnchor.constraint(equalToConstant: 350).isActive = true
-        firstButton.heightAnchor.constraint(equalToConstant: 55).isActive = true
-        firstButton.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 20).isActive = true
-        firstButton.topAnchor.constraint(equalTo: parent.topAnchor, constant: 154).isActive = true
-        
-        // image set
-        firstButton.addSubview(firstButtonImage)
-        firstButtonImage.translatesAutoresizingMaskIntoConstraints = false
-        firstButtonImage.widthAnchor.constraint(equalToConstant: 35).isActive = true
-        firstButtonImage.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        firstButtonImage.leadingAnchor.constraint(equalTo: firstButton.leadingAnchor, constant: 32).isActive = true
-        firstButtonImage.topAnchor.constraint(equalTo: firstButton.topAnchor, constant: 10).isActive = true
-        
-        // label set
-        firstButton.addSubview(firstButtonLabel)
-        
-        
-    }
-    
+  
    
     // UIButton setups
     
