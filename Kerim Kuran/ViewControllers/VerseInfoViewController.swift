@@ -153,6 +153,7 @@ extension VerseInfoViewController: UITableViewDataSource, UITableViewDelegate {
         return infoData.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! VerseInfoCell

@@ -12,7 +12,7 @@ class VerseViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var selectedVerseId: Int = 0
+    var selectedVerseId = 0
     var filteredDataNS = [NSAttributedString]()
     let fuse = Fuse()
     let searchController = UISearchController(searchResultsController: nil)
@@ -20,17 +20,17 @@ class VerseViewController: UIViewController, UITableViewDelegate {
     var verseInfoData = DataLoader().verseInfoData
     var selectedVerses: [Verse] = []
     var filteredVerseData = [Verse]()
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set(selectedVerseId, forKey: "selectedVerseId")
         
         // Setup the Search Controller
         navigationItem.searchController = searchController
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
         navigationItem.hidesSearchBarWhenScrolling = false
-       
         
         selectedVerses = verses.filter { $0.sureId == selectedVerseId }
         
@@ -101,6 +101,10 @@ class VerseViewController: UIViewController, UITableViewDelegate {
 
 extension VerseViewController: UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        UserDefaults.standard.set(indexPath.row, forKey: "lastViewedRowIndex")
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive && searchController.searchBar.text != "" && !filteredVerseData.isEmpty {
             return filteredDataNS.count
@@ -129,7 +133,7 @@ extension VerseViewController: UITableViewDataSource {
         cell.verseIdLabel.text = labelVerseData.id
         cell.verseLabel.attributedText = verseLabelData
         cell.verseInfoLabel.text = labelVerseData.note
-        
+    
         // Add a long press gesture recogniser to the cell
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(copyVerse(_:)))
         cell.addGestureRecognizer(longPressRecognizer)
