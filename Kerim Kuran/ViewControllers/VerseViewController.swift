@@ -20,11 +20,19 @@ class VerseViewController: UIViewController, UITableViewDelegate {
     var verseInfoData = DataLoader().verseInfoData
     var selectedVerses: [Verse] = []
     var filteredVerseData = [Verse]()
-
+    var lastVisibleRowIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController.searchBar.placeholder = "Ayet meali ara"
+        
+       // UserDefaults.standard.setValue(lastVisibleRowIndex, forKey: "lastVisibleRowIndex")
         UserDefaults.standard.set(selectedVerseId, forKey: "selectedVerseId")
+        
+        UserDefaults.standard.setValue(lastVisibleRowIndex, forKey: "lastVisibleRowIndex")
+        print(UserDefaults.standard.integer(forKey: "lastVisibleRowIndex")) // should print the same value as lastVisibleRowIndex
+
         
         // Setup the Search Controller
         navigationItem.searchController = searchController
@@ -101,10 +109,6 @@ class VerseViewController: UIViewController, UITableViewDelegate {
 
 extension VerseViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        UserDefaults.standard.set(indexPath.row, forKey: "lastViewedRowIndex")
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive && searchController.searchBar.text != "" && !filteredVerseData.isEmpty {
             return filteredDataNS.count
@@ -140,6 +144,32 @@ extension VerseViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            lastVisibleRowIndex = findLastVisibleRowIndex() ?? 0
+            UserDefaults.standard.setValue(lastVisibleRowIndex, forKey: "lastVisibleRowIndex")
+        }
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        lastVisibleRowIndex = findLastVisibleRowIndex() ?? 0
+        UserDefaults.standard.setValue(lastVisibleRowIndex, forKey: "lastVisibleRowIndex")
+    }
+
+    func findLastVisibleRowIndex() -> Int? {
+        let bottomEdge = tableView.contentOffset.y + tableView.frame.size.height
+        let indexPaths = tableView.indexPathsForVisibleRows?.sorted(by: { $0.row < $1.row })
+        var lastVisibleIndex: Int?
+        for indexPath in indexPaths ?? [] {
+            if tableView.rectForRow(at: indexPath).maxY > bottomEdge {
+                break
+            }
+            lastVisibleIndex = indexPath.row
+        }
+        return lastVisibleIndex
+    }
+    
     
     @objc func copyVerse(_ gestureRecognizer: UILongPressGestureRecognizer) {
         if gestureRecognizer.state == .began {

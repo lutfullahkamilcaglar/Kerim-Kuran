@@ -34,17 +34,19 @@ class MainViewController: UIViewController {
     let leadingGuide = UILayoutGuide()
     let middleGuide = UILayoutGuide()
     let trailingGuide = UILayoutGuide()
-    
 
+    @IBOutlet weak var lightLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Ana Sayfa", style: .plain, target: nil, action: nil)
- 
         
+        let lightText = "Allah’ın aydınlığı ile aydınlanmamış bir kimse için başka aydınlık yoktur.\n(24/Nur Suresi,40)"
+          
+        lightLabel.text = lightText
         setupViews()
     }
-    
+   
     func buttonViewSetup() {
         
         view.addSubview(buttonView)
@@ -98,7 +100,6 @@ class MainViewController: UIViewController {
         // alltakiler
         
         //leading guide
-     //margins.leadingAnchor.constraint(equalTo: leadingGuide.leadingAnchor).isActive = true
         leadingGuide.trailingAnchor.constraint(equalTo: prefaceButton.leadingAnchor).isActive = true
         
         //middleGuide
@@ -150,7 +151,7 @@ class MainViewController: UIViewController {
         verseButtonLabel.numberOfLines = 0
         verseButtonLabel.lineBreakMode = .byWordWrapping
         verseButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
-        verseButtonLabel.text = "Tüm Sureleri gör"
+        verseButtonLabel.text = "SURE SEÇİMİ"
         verseButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         verseButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         verseButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
@@ -190,7 +191,7 @@ class MainViewController: UIViewController {
         continueButtonLabel.numberOfLines = 0
         continueButtonLabel.lineBreakMode = .byWordWrapping
         continueButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
-        continueButtonLabel.text = "Okumaya Devam et"
+        continueButtonLabel.text = "OKUMAYA DEVAM ET"
         continueButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         continueButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         continueButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
@@ -212,7 +213,8 @@ class MainViewController: UIViewController {
         prefaceButton.translatesAutoresizingMaskIntoConstraints = false
         prefaceButton.widthAnchor.constraint(equalToConstant: 165).isActive = true
         prefaceButton.heightAnchor.constraint(equalToConstant: 165).isActive = true
-//        prefaceButton.leadingAnchor.constraint(equalTo: buttonView.leadingAnchor, constant: 0).isActive = true
+        // check this line
+        //prefaceButton.leadingAnchor.constraint(equalTo: buttonView.leadingAnchor, constant: 0).isActive = true
         prefaceButton.topAnchor.constraint(equalTo: buttonView.topAnchor, constant: 185).isActive = true
         
         //button image setup
@@ -258,6 +260,7 @@ class MainViewController: UIViewController {
         aboutButton.translatesAutoresizingMaskIntoConstraints = false
         aboutButton.widthAnchor.constraint(equalToConstant: 165).isActive = true
         aboutButton.heightAnchor.constraint(equalToConstant: 165).isActive = true
+        // check this line
 //      aboutButton.trailingAnchor.constraint(equalTo: buttonView.trailingAnchor, constant: 0).isActive = true
         aboutButton.topAnchor.constraint(equalTo: buttonView.topAnchor, constant: 185).isActive = true
 
@@ -279,7 +282,7 @@ class MainViewController: UIViewController {
         aboutButtonLabel.numberOfLines = 0
         aboutButtonLabel.lineBreakMode = .byWordWrapping
         aboutButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
-        aboutButtonLabel.text = "BİRR Platformu"
+        aboutButtonLabel.text = "BİRR platformu"
         aboutButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         aboutButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         aboutButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true

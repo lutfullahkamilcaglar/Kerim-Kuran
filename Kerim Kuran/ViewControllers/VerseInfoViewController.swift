@@ -21,16 +21,18 @@ class VerseInfoViewController: UIViewController {
     var NSfilteredData = [NSAttributedString]()
     let fuse = Fuse()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // Setup the TableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
         
-        self.title = "Tüm Sureler"
-        searchController.searchBar.placeholder = "Arama"
+        self.title = "Sure Seçimi"
+        searchController.searchBar.placeholder = "Ayet ara"
         
         // Setup the Search Controller
         navigationItem.searchController = searchController
@@ -176,6 +178,8 @@ extension VerseInfoViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
+
 }
 
 
