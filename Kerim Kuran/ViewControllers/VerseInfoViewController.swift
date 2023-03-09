@@ -79,15 +79,17 @@ class VerseInfoViewController: UIViewController {
                 filteredData.append(attributedString)
                 filteredVerseInfoData.append(verseInfoData)
             }
-
-            // This dispatch queue added for after reloading the
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
             DispatchQueue.main.async {
-                self.NSfilteredData = filteredData
-                self.filteredVerseInfoData = filteredVerseInfoData
-                self.tableView.reloadData()
+                if filteredData.isEmpty {
+                     // Display the current version of the table view
+                     self.NSfilteredData = combinedVerses.map { NSMutableAttributedString(string: $0) }
+                     self.filteredVerseInfoData = self.infoData
+                 } else {
+                     // Display the search results in the table view
+                     self.NSfilteredData = filteredData
+                     self.filteredVerseInfoData = filteredVerseInfoData
+                 }
+                 self.tableView.reloadData()
             }
         }
     }

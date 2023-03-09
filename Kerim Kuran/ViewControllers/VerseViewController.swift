@@ -14,20 +14,21 @@ class VerseViewController: UIViewController, UITableViewDelegate {
     
     var selectedVerseId = 0
     var filteredDataNS = [NSAttributedString]()
-    let fuse = Fuse()
+    var filteredIdNS = [NSAttributedString]()
+    let fuse = Fuse(distance: 700)
     let searchController = UISearchController(searchResultsController: nil)
     var verses = DataLoader().verseData
     var verseInfoData = DataLoader().verseInfoData
     var selectedVerses: [Verse] = []
     var filteredVerseData = [Verse]()
     var lastVisibleRowIndex = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchController.searchBar.placeholder = "Ayet meali ara"
+        searchController.searchBar.placeholder = "Ara"
         
-       // UserDefaults.standard.setValue(lastVisibleRowIndex, forKey: "lastVisibleRowIndex")
         UserDefaults.standard.set(selectedVerseId, forKey: "selectedVerseId")
         
         UserDefaults.standard.setValue(lastVisibleRowIndex, forKey: "lastVisibleRowIndex")
@@ -67,15 +68,26 @@ class VerseViewController: UIViewController, UITableViewDelegate {
                 
                 let verseId = self.verses.map { $0.id }
                 let ayetValue = self.verses.map { $0.ayetValue }
-                let verseNote = self.verses.map { $0.note }
+                let verseNote = self.verses.map { $0.note ?? "" }
+                
+                var searchItems: [String]
+                var isIdSearch: Bool
+                
+                if let _ = Int(searchText) {
+                    isIdSearch = true
+                    searchItems = verseId
+                } else {
+                    isIdSearch = false
+                    searchItems = ayetValue
+                }
                 
                 var combinedVerses = [String]()
                 for (index, id) in verseId.enumerated() {
-                    let combinedVerse = "\(id) - \(ayetValue[index]) - \(verseNote[index] ?? "")"
+                    let combinedVerse = "\(id) - \(ayetValue[index]) - \(verseNote[index])"
                     combinedVerses.append(combinedVerse)
                 }
                 
-                let results = self.fuse.search(searchText, in: ayetValue)
+                let results = self.fuse.search(searchText, in: searchItems)
                 
                 
                 var filteredData = [NSMutableAttributedString]()
@@ -85,19 +97,24 @@ class VerseViewController: UIViewController, UITableViewDelegate {
                     
                     let verseData = self.verses[index]
                     
-                    let attributedString = NSMutableAttributedString(string: ayetValue[index])
+                    let attributedString = NSMutableAttributedString(string: searchItems[index])
                     if !matchedRanges.isEmpty {
                         let nsRanges = matchedRanges.map(Range.init).map(NSRange.init)
                         for nsRange in nsRanges {
                             attributedString.addAttributes(boldAttrs, range: nsRange)
                         }
                     }
+                    
                     filteredData.append(attributedString)
                     filteredVerseData.append(verseData)
                 }
                 
                 DispatchQueue.main.async {
-                    self.filteredDataNS = filteredData
+                    if (isIdSearch) {
+                        self.filteredIdNS = filteredData
+                    } else {
+                        self.filteredDataNS = filteredData
+                    }
                     self.filteredVerseData = filteredVerseData
                     self.tableView.reloadData()
                 }
@@ -111,7 +128,11 @@ extension VerseViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive && searchController.searchBar.text != "" && !filteredVerseData.isEmpty {
-            return filteredDataNS.count
+            if let _ = Int(searchController.searchBar.text!) {
+                return filteredIdNS.count
+            } else {
+                return filteredDataNS.count
+            }
         } else{
             return selectedVerses.count
         }
@@ -123,18 +144,26 @@ extension VerseViewController: UITableViewDataSource {
         
         let labelVerseData: Verse
         let verseLabelData: NSAttributedString
+        let verseIdData: NSAttributedString
         
-        let isSearchActive = searchController.isActive && searchController.searchBar.text != "" && !filteredVerseData.isEmpty
+        let isSearchActive = searchController.isActive && !searchController.searchBar.text!.isEmpty && !filteredVerseData.isEmpty
         
         if isSearchActive {
-            labelVerseData = self.filteredVerseData[indexPath.row] //
-            verseLabelData = filteredDataNS[indexPath.row]
+            labelVerseData = self.filteredVerseData[indexPath.row]
+            if let _ = Int(searchController.searchBar.text!) {
+                verseIdData = filteredIdNS[indexPath.row]
+                verseLabelData = NSAttributedString(string: labelVerseData.ayetValue)
+            } else {
+                verseLabelData = filteredDataNS[indexPath.row]
+                verseIdData = NSAttributedString(string: labelVerseData.id)
+            }
         } else {
             labelVerseData = self.selectedVerses[indexPath.row]
             verseLabelData = NSAttributedString(string: labelVerseData.ayetValue)
+            verseIdData = NSAttributedString(string: labelVerseData.id)
         }
         
-        cell.verseIdLabel.text = labelVerseData.id
+        cell.verseIdLabel.attributedText = verseIdData
         cell.verseLabel.attributedText = verseLabelData
         cell.verseInfoLabel.text = labelVerseData.note
     

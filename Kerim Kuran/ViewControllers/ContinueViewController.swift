@@ -93,6 +93,31 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
         
     }
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            lastVisibleRowIndex = findLastVisibleRowIndex() ?? 0
+            UserDefaults.standard.setValue(lastVisibleRowIndex, forKey: "lastVisibleRowIndex")
+        }
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        lastVisibleRowIndex = findLastVisibleRowIndex() ?? 0
+        UserDefaults.standard.setValue(lastVisibleRowIndex, forKey: "lastVisibleRowIndex")
+    }
+
+    func findLastVisibleRowIndex() -> Int? {
+        let bottomEdge = tableView.contentOffset.y + tableView.frame.size.height
+        let indexPaths = tableView.indexPathsForVisibleRows?.sorted(by: { $0.row < $1.row })
+        var lastVisibleIndex: Int?
+        for indexPath in indexPaths ?? [] {
+            if tableView.rectForRow(at: indexPath).maxY > bottomEdge {
+                break
+            }
+            lastVisibleIndex = indexPath.row
+        }
+        return lastVisibleIndex
+    }
+    
     @objc func copyVerse(_ gestureRecognizer: UILongPressGestureRecognizer) {
         if gestureRecognizer.state == .began {
             // Retrieve the selected row
