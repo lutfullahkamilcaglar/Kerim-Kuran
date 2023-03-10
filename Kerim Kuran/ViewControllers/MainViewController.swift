@@ -35,15 +35,17 @@ class MainViewController: UIViewController {
     let middleGuide = UILayoutGuide()
     let trailingGuide = UILayoutGuide()
 
+    @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var lightLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Ana Sayfa", style: .plain, target: nil, action: nil)
-        
+        let topText = "KERIM KUR'AN"
         let lightText = "Allah’ın aydınlığı ile aydınlanmamış bir kimse için başka aydınlık yoktur.\n(24/Nur Suresi,40)"
           
         lightLabel.text = lightText
+        topLabel.text = topText
         setupViews()
     }
    
