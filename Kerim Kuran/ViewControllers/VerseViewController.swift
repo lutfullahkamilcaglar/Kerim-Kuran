@@ -32,7 +32,6 @@ class VerseViewController: UIViewController, UITableViewDelegate {
         UserDefaults.standard.set(selectedVerseId, forKey: "selectedVerseId")
         
         UserDefaults.standard.setValue(lastVisibleRowIndex, forKey: "lastVisibleRowIndex")
-        print(UserDefaults.standard.integer(forKey: "lastVisibleRowIndex")) // should print the same value as lastVisibleRowIndex
 
         
         // Setup the Search Controller
@@ -203,9 +202,15 @@ extension VerseViewController: UITableViewDataSource {
     @objc func copyVerse(_ gestureRecognizer: UILongPressGestureRecognizer) {
         if gestureRecognizer.state == .began {
             // Retrieve the selected row
+            let isSearchActive = searchController.isActive && !searchController.searchBar.text!.isEmpty && !filteredVerseData.isEmpty
             let point = gestureRecognizer.location(in: tableView)
             if let indexPath = tableView.indexPathForRow(at: point) {
-                let verse = selectedVerses[indexPath.row]
+                let verse: Verse
+                if isSearchActive {
+                    verse = filteredVerseData[indexPath.row]
+                } else {
+                    verse = selectedVerses[indexPath.row]
+                }
                 let lowerCasedVerseName = verse.name.prefix(1).capitalized + verse.name.dropFirst().lowercased()
                 // Copy the verse contents to the clipboard
                 let pasteboard = UIPasteboard.general
@@ -219,6 +224,7 @@ extension VerseViewController: UITableViewDataSource {
             }
         }
     }
+
 }
 
 

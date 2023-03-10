@@ -19,19 +19,31 @@ class ContactViewController: UIViewController,MFMailComposeViewControllerDelegat
     @IBOutlet weak var seventhButton: UIButton!
     @IBOutlet weak var eighthButton : UIButton!
     
+    let firstButtonImage    = UIImageView(image: UIImage(named: "button1"))
+    let secondButtonImage = UIImageView(image: UIImage(named: "button2"))
+    let thirdButtonImage  = UIImageView(image: UIImage(named: "button3"))
+    let fourthButtonImage    = UIImageView(image: UIImage(named: "button4"))
     
+    //Button label setups
+    let verseButtonLabel     = UILabel()
+    let continueButtonLabel  = UILabel()
+    let prefaceButtonLabel   = UILabel()
+    let aboutButtonLabel     = UILabel()
+    let contactButtonLabel   = UILabel()
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         self.title = "İletişim"
-        
-       
+        //firstButtonUI()
     }
   
+    
    
     // UIButton setups
+    func firstButtonUI() {
+        firstButton.addSubview(firstButtonImage)
+    }
     
     @IBAction func firstButtonClicked(_ sender: UIButton) {
         if let url = URL(string: "https://www.erhanaktas.org") {

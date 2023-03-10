@@ -151,7 +151,7 @@ class MainViewController: UIViewController {
         verseButtonLabel.numberOfLines = 0
         verseButtonLabel.lineBreakMode = .byWordWrapping
         verseButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
-        verseButtonLabel.text = "SURE SEÇİMİ"
+        verseButtonLabel.text = "Sure Seçimi"
         verseButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         verseButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         verseButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
@@ -191,7 +191,7 @@ class MainViewController: UIViewController {
         continueButtonLabel.numberOfLines = 0
         continueButtonLabel.lineBreakMode = .byWordWrapping
         continueButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
-        continueButtonLabel.text = "OKUMAYA DEVAM ET"
+        continueButtonLabel.text = "Okumaya devam et"
         continueButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         continueButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         continueButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
@@ -282,7 +282,7 @@ class MainViewController: UIViewController {
         aboutButtonLabel.numberOfLines = 0
         aboutButtonLabel.lineBreakMode = .byWordWrapping
         aboutButtonLabel.font = UIFont(name: "Helvetica Neue", size: 20)
-        aboutButtonLabel.text = "BİRR platformu"
+        aboutButtonLabel.text = "BİRR Platformu"
         aboutButtonLabel.translatesAutoresizingMaskIntoConstraints = false
         aboutButtonLabel.widthAnchor.constraint(equalToConstant: 121).isActive = true
         aboutButtonLabel.heightAnchor.constraint(equalToConstant: 56).isActive = true
